@@ -58,31 +58,16 @@ return [
 //                        '{id}' => '<id:\\w+>'
 //                    ],
 //                ],
-                ['class'=>'yii\rest\UrlRule', 'controller'=> 'v1/user',
-
-
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=> 'v1/user',
 
                 ],
-                ['class'=>'yii\rest\UrlRule', 'controller'=> 'v1/post',
-                    'tokens'=>[
-                        '{id}'=> '<id:\\w+>'
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=> 'v1/post',
+                        'tokens'=>[
+                            '{id}'=> '<id:\\w+>'
                     ],
                 ],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/user',
-//                    'tokens' => [
-//                        '{id}' => '<id:\\w+>'
-//                    ],
-//                'extraPatterns' => [
-//                    'POST logins'=> 'login/index'
-//
-//                ],
-//],
-//                ['class'=> 'yii\rest\UrlRule', 'controller'=> 'v1/...',
-//                    'tokens'=>[
-//                        '{id}'=> '<id:\\w+'
-//                    ],
-//                    ],
-
             ],
         ],
     ],

@@ -9,13 +9,11 @@ use yii\filters\ContentNegotiator;
 use yii\web\Response;
 use common\models\Token;
 use yii;
-use api\modules\v1\models\User;
+use common\models\User;
 
 class UserController extends ActiveController
 {
-    public $gender;
-    public $u_date;
-    public $password = "";
+//    public $password = "";
 
     public function behaviors()
     {
@@ -47,38 +45,33 @@ class UserController extends ActiveController
         ];
         return $behaviors;
     }
-    public $modelClass = 'api\modules\v1\models\User';
+    public $modelClass = 'common\models\User';
 
 
     public function actionCreate()
 
     {
         \Yii::$app->response->format = Response:: FORMAT_JSON;
-        $this->enableCsrfValidation = false;
-        $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
-        {
-            $result =  [
-                'success' => 0,
-                'message' => 'User with this email already exist',
-                'code' => 'email_busy'
-            ];
+            $this->enableCsrfValidation = false;
+            $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
+            {
+                $result =  [
+                    'success' => 0,
+                    'message' => 'User with this email already exist',
+                    'code' => 'email_busy'
+                ];
         }
         if(!$user){
             $user = new User();
-            $user->username = Yii::$app->request->getBodyParam('');
             $user->email = Yii::$app->request->getBodyParam('');
             $user->setPassword($this->password)(Yii::$app->request->getBodyParam('password'));
-            $user->gender = $this->gender = Yii::$app->request->getBodyParam('gender');
-            $user->u_date = $this->u_date = Yii::$app->request->getBodyParam('u_date');
             $user->generateAuthKey();
             $user->save();
             $token = $this->generateToken($user->id);
             $result =   [
                 'success' => 1,
-                'username' =>  $user->username,
+                'email' =>  $user->email,
                 'userId' =>  $user->id,
-                'gender'=> $user->gender,
-                'u_date'=>$user->u_date,
                 'payload' => $user,
                 'token' => $token->token
             ];

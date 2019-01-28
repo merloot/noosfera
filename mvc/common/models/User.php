@@ -6,6 +6,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use common\models\Token;
 
 /**
  * User model
@@ -25,6 +26,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+
 
 
     /**
@@ -51,6 +53,18 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+//            ['email', 'trim'],
+//            ['email', 'required'],
+//            ['email', 'email'],
+//            ['email', 'string', 'max' => 255],
+//            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+//
+//            ['password', 'required'],
+//            ['password', 'string', 'min' => 6],
+            ['email' , 'safe'],
+            ['password','safe'],
+            ['auth_key','safe'],
+            ['token', 'safe'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
@@ -69,18 +83,22 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        Token::deleteAll('time < ' . time());
+        return static::find()->with('token')->one();
     }
-
+    public function getToken()
+    {
+        return $this->hasMany(Token::className(),['id_user'=>'id']);
+    }
     /**
      * Finds user by username
      *
-     * @param string $username
+     * @param string $email
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByEmail($email)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**
@@ -186,4 +204,5 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
 }
