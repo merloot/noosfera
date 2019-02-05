@@ -1,7 +1,7 @@
 <?php
 namespace api\models;
-use common\models\Token;
 use common\models\User;
+use api\modules\v1\models\Token;
 use yii\base\Model;
 /**
 * Login form
@@ -10,7 +10,7 @@ class LoginForm extends Model
 {
     public $email;
     public $password;
-    private $_user;
+    public $_user;
 
     /**
      * @inheritdoc
@@ -46,7 +46,7 @@ class LoginForm extends Model
     {
         if ($this->validate()) {
             $token = new Token();
-            $token->user_id = $this->getUser()->id;
+            $token->t_user_id = $this->getUser()->id;
             $token->generateToken(time() + 3600 * 24);
             return $token->save() ? $token : null;
         } else {

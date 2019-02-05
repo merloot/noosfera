@@ -13,6 +13,7 @@ use yii\behaviors\BlameableBehavior;
 use yii;
 use common\models\User;
 
+
 class ProfileController extends ActiveController
 {
     public function behaviors()
@@ -54,7 +55,8 @@ class ProfileController extends ActiveController
 
     public function actionsCreate()
     {
-        if(!$Profile) {
+//        if(!$Profile)
+{
             $Profile = new Profile();
             $Profile->p_name = Yii::$app->request->getBodyParam('');
             $Profile->p_second_name = Yii::$app->request->getBodyParam('');
@@ -77,6 +79,7 @@ class ProfileController extends ActiveController
         }
         return $result;
         }
+
 
 
     public function actionsUpdate()

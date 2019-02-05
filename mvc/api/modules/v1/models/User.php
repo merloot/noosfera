@@ -66,11 +66,7 @@ class User extends ActiveRecord implements IdentityInterface
 //
 //            ['password', 'required'],
 //            ['password', 'string', 'min' => 6],
-//            ['gender', 'required'],
-//            ['u_date','safe'],
-            ['u_date','required'],
             ['email' , 'safe'],
-            ['username','safe'],
             ['password','safe'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -85,13 +81,14 @@ class User extends ActiveRecord implements IdentityInterface
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
+
+
     /**
      * {@inheritdoc}
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        Token::deleteAll('time < ' . time());
-        return static::find()->with('token')->one();
+       return static::findOne(['access_token' => $token]);
     }
     public function getToken()
     {
@@ -207,6 +204,8 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * Removes password reset token
      */
+
+
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;

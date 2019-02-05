@@ -66,6 +66,6 @@ class Token extends ActiveRecord
     public function generateToken($expire)
     {
         $this->expire_time = $expire;
-        $this->token = \Yii::$app->security->generateRandomString();
+        $this->token = Yii::$app->security->generateRandomString();
     }
 }

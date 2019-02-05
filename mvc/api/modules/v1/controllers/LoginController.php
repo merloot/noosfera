@@ -12,6 +12,7 @@ use yii\web\Response;
 use common\models\User;
 use common\models\Token;
 use yii\filters\Cors;
+use sizeg\jwt\JwtHttpBearerAuth;
 
 class LoginController extends Controller
 {
@@ -26,6 +27,9 @@ class LoginController extends Controller
                     'Access-Control-Request-Method' => [ 'POST', 'OPTIONS'],
                     'Access-Control-Request-Headers' => ['*'],
                 ],
+            ],
+            'authenticator'=> [
+                'class' => JwtHttpBearerAuth::class,
             ],
 //            'verbs' => [
 //                'class' => VerbFilter::className(),
@@ -51,70 +55,8 @@ class LoginController extends Controller
             ],
         ];
     }
-    public function beforeAction($action)
-    {
-        if (in_array($action->id, ['index'])) {
-            $this->enableCsrfValidation = false;
-        }
-        return parent::beforeAction($action);
-    }
-    /* отключаем цсрф чтобы не иметь 400 ошибки при запросе*/
-    public function actionIndex()
-    {
-        $this->enableCsrfValidation = false;
-        $params = Yii::$app->request->getBodyParams();
-        $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
-        if($user)
-            if (!$user->validatePassword(Yii::$app->request->getBodyParam('password'))) {
-                $result =   [
-                    'success' => 0,
-                    'message' => 'Incorrect password'
-                ];
-            }
-            else{
-                $token = new Token();
-                $token->token = Yii::$app->getSecurity()->generateRandomString(12);
-                $token->user_id = $user->id;
-                $token->expire_time = time() + 3600 * 5;
-                $token->save();
-                Token::deleteAll('expire_time < ' . time());
-                $result =   [
-                    'success' => 1,
-                    'username' =>  $user->username,
-                    'payload' => $user,
-                    'token' => $token->token
-                ];
-            }
-        echo json_encode($result);
-    }
-    public function actionRegistration()
-    {
-        $this->enableCsrfValidation = false;
-        $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
-        {
-            $result =  [
-                'success' => 0,
-                'message' => 'User with this email already exist',
-                'code' => 'email_busy'
-            ];
-        }
-        if(!$user){
-            $user = new User();
-            $user->username = Yii::$app->request->getBodyParam('username');
-            $user->email = Yii::$app->request->getBodyParam('email');
-            $user->setPassword(Yii::$app->request->getBodyParam('password'));
-            $user->generateAuthKey();
-            $user->save();
-            $token = $this->generateToken($user->id);
-            $result =   [
-                'success' => 1,
-                'username' =>  $user->username,
-                'userId' =>  $user->id,
-                'payload' => $user,
-                'token' => $token->token
-            ];
-        }
-        return $result;
-    }
+
+
+
 
 }

@@ -7,13 +7,18 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\filters\ContentNegotiator;
 use yii\web\Response;
-use common\models\Token;
 use yii;
-use common\models\User;
+use api\modules\v1\models\User;
+use api\modules\v1\models\Token;
+use yii\filters\auth\CompositeAuth;
+use yii\filters\auth\HttpBasicAuth;
+use yii\filters\auth\HttpBearerAuth;
+use yii\filters\auth\QueryParamAuth;
+use sizeg\jwt\JwtHttpBearerAuth;
+
 
 class UserController extends ActiveController
 {
-//    public $password = "";
 
     public function behaviors()
     {
@@ -22,10 +27,20 @@ class UserController extends ActiveController
                 'class' => Cors::className(),
                 'cors' => [
                     'Origin' => ['*'],
-                    'Access-Control-Request-Method' => [ 'POST', 'OPTIONS'],
+                    'Access-Control-Request-Method' => [ 'POST', 'OPTIONS', 'GET','DELETE'],
                     'Access-Control-Request-Headers' => ['*'],
                 ],
             ],
+
+           'authenticator' => [
+               'class' => CompositeAuth::className(),
+               'authMethods' => [
+                   HttpBasicAuth::className(),
+                   HttpBearerAuth::className(),
+                   QueryParamAuth::className(),
+                   JwtHttpBearerAuth::className(),
+               ],
+           ],
 //             'access' => [
 //                 'class' => AccessControl::className(),
 //                 'rules' => [
@@ -45,10 +60,35 @@ class UserController extends ActiveController
         ];
         return $behaviors;
     }
-    public $modelClass = 'common\models\User';
+
+//    public $moduleClass = 'api\modules\v1\models\Token';
+    public $modelClass = 'api\modules\v1\models\User';
+//    public $modelClass = 'common\models\User';
 
 
-    public function actionCreate()
+
+    public function actionToken()
+    {
+        $token = Yii::$app->jwt->getBuilder()
+            ->setIssuer('http://localhost/noosfera/public_html/api') // Configures the issuer (iss claim)
+            ->setAudience('http://localhost/noosfera/public_html/api') // Configures the audience (aud claim)
+            ->setId('4f1g23a12aa', true) // Configures the id (jti claim), replicating as a header item
+            ->setIssuedAt(time()) // Configures the time that the token was issue (iat claim)
+            ->setNotBefore(time() + 60) // Configures the time before which the token cannot be accepted (nbf claim)
+            ->setExpiration(time() + 3600) // Configures the expiration time of the token (exp claim)
+            ->set('uid', 1) // Configures a new claim, called "uid"
+            ->getToken(); // Retrieves the generated token
+
+
+        $token->getHeaders(); // Retrieves the token headers
+        $token->getClaims(); // Retrieves the token claims
+
+        echo $token->getHeader('jti'); // will print "4f1g23a12aa"
+        echo $token->getClaim('iss'); // will print "http://example.com"
+        echo $token->getClaim('uid'); // will print "1"
+        echo $token; // The string representation of the object is a JWT string (pretty easy, right?)
+    }
+    public function actionTest()
 
     {
         \Yii::$app->response->format = Response:: FORMAT_JSON;
@@ -64,10 +104,10 @@ class UserController extends ActiveController
         if(!$user){
             $user = new User();
             $user->email = Yii::$app->request->getBodyParam('');
-            $user->setPassword($this->password)(Yii::$app->request->getBodyParam('password'));
+            $user->setPassword(Yii::$app->request->getBodyParam('password'));
             $user->generateAuthKey();
+            $token = $this->createToken();
             $user->save();
-            $token = $this->generateToken($user->id);
             $result =   [
                 'success' => 1,
                 'email' =>  $user->email,
@@ -76,13 +116,9 @@ class UserController extends ActiveController
                 'token' => $token->token
             ];
         }
+        var_dump($user);
+
         return $result;
-    }
-    public function beforeSave($insert) {
-        if ($this->password) {
-            $this->setPassword($this->password);
-        }
-        return parent::beforeSave($insert);
     }
 }
 

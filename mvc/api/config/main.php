@@ -16,6 +16,10 @@ return [
         ]
     ],
     'components' => [
+        'jwt' => [
+            'class' => 'sizeg\jwt\Jwt',
+            'key'   => 'secret',
+        ],
         'request' => [
             'csrfParam' => '_csrf-api',
             'parsers' => [
@@ -28,10 +32,10 @@ return [
             'enableAutoLogin' => false,
             'enableSession' => false,
         ],
-//        'session' => [
-//            // this is the name of the session cookie used for login on the frontend
-//            'name' => 'advanced-api',
-//        ],
+// 'session' => [
+// // this is the name of the session cookie used for login on the frontend
+// 'name' => 'advanced-api',
+// ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -41,9 +45,9 @@ return [
                 ],
             ],
         ],
-//        'errorHandler' => [
-//            'errorAction' => 'site/error',
-//        ],
+// 'errorHandler' => [
+// 'errorAction' => 'site/error',
+// ],
 
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -53,19 +57,25 @@ return [
                 ''=>'site/index',
                 'auth' => '/site/login',
                 '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/user',
-//                    'tokens' => [
-//                        '{id}' => '<id:\\w+>'
-//                    ],
-//                ],
+// ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/user',
+// 'tokens' => [
+// '{id}' => '<id:\\w+>'
+// ],
+// ],
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/login',
+                    'pluralize'=>false
+                ],
+
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
+                    'pluralize'=>false,
 
                 ],
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/post',
-                        'tokens'=>[
-                            '{id}'=> '<id:\\w+>'
+                    'tokens'=>[
+                        '{id}'=> '<id:\\w+>'
                     ],
                 ],
             ],
