@@ -10,20 +10,6 @@ class m190211_035034_Competence extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function safeDown()
-    {
-        echo "m190211_035034_Competence cannot be reverted.\n";
-
-        return false;
-    }
 
     // Use up()/down() to run migration code without a transaction.
     public function up()
@@ -41,11 +27,13 @@ class m190211_035034_Competence extends Migration
 
         $this->createTable('{{%CompetenceProfile}}',[
             'cp_id'=>$this->primaryKey(),
-            'cp_p_id'=>$this->integer(11)->notNull(),
-            $this->addForeignKey("competence_profile","{{%CompetenceProfile}}",'cp_id',"{{%Competence}}","com_id"),
-            $this->addForeignKey("competence_profile_user","{{%Profile}}","p_user_id","{{%CompetenceProfile}}","cp_p_id")
+            'cp_com_id'=>$this->bigInteger()->notNull(),
+            'cp_p_id'=>$this->bigInteger()->notNull(),
 
         ],$tableOptions);
+
+            $this->addForeignKey("competence_profile","{{%CompetenceProfile}}",'cp_com_id',"{{%Competence}}","com_id",'CASCADE');
+            $this->addForeignKey("competence_profile_user","{{%CompetenceProfile}}","cp_p_id","{{%Profile}}","p_user_id","CASCADE");
     }
     public function down()
     {

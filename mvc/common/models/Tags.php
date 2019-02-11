@@ -1,0 +1,44 @@
+<?php
+
+namespace common\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "Tags".
+ *
+ * @property int $tag_id
+ * @property string $tag_name
+ */
+class Tags extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'Tags';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['tag_name'], 'required'],
+            [['tag_name'], 'string', 'max' => 100],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'tag_id' => 'Tag ID',
+            'tag_name' => 'Tag Name',
+        ];
+    }
+}

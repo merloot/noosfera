@@ -10,20 +10,6 @@ class m190211_040555_Tags extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function safeDown()
-    {
-        echo "m190211_040555_Tags cannot be reverted.\n";
-
-        return false;
-    }
 
 
     // Use up()/down() to run migration code without a transaction.
@@ -43,11 +29,11 @@ class m190211_040555_Tags extends Migration
         $this->createTable('{{%TagsConsultation}}',[
             'tc_id'=>$this->primaryKey(),
             'tc_tag_id'=>$this->integer(11)->notNull(),
-            'tc_con_id'=>$this->integer('11')->notNull(),
-            $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_tag_id"),
-            $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%Consultation}}","con_id")
+            'tc_con_id'=>$this->integer(11)->notNull(),
 
         ],$tableOptions);
+
+
     }
 
     public function down()

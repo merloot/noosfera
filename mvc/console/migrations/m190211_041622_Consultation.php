@@ -10,21 +10,6 @@ class m190211_041622_Consultation extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function safeDown()
-    {
-        echo "m190211_041622_Consultation cannot be reverted.\n";
-
-        return false;
-    }
-
 
     // Use up()/down() to run migration code without a transaction.
     public function up()
@@ -43,7 +28,7 @@ class m190211_041622_Consultation extends Migration
             'con_date'=>$this->date(),
             'con_begin_time'=>$this->time(),
             'con_end_time'=>$this->time(),
-            'con_price'=>$this->money()->check('con_price'> 0),
+            'con_price'=>$this->money(),
 
         ], $tableOptions);
 
@@ -56,10 +41,9 @@ class m190211_041622_Consultation extends Migration
             'pc_date'=>$this->date(),
             'pc_begin_time'=>$this->time(),
             'pc_end_time'=>$this->time(),
-            'pc_price'=>$this->money()->check('pc_price' > 0),
+            'pc_price'=>$this->money(),
             'pc_like'=>$this->boolean(),
-            $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%Consultation}}","con_id"),
-            $this->addForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}","pc_user_id","{{%Profile}}","p_user_id"),
+
         ],$tableOptions);
 
         $this->createTable('{{%SellingConsultation}}',[
@@ -71,12 +55,19 @@ class m190211_041622_Consultation extends Migration
             'sc_date'=>$this->date(),
             'sc_begin_time'=>$this->time(),
             'sc_end_time'=>$this->time(),
-            'sc_price'=>$this->money()->check('sc_price' > 0),
+            'sc_price'=>$this->money(),
             'sc_like'=>$this->boolean(),
-            $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%Consultation}}","con_id"),
-            $this->addForeignKey("selling_consultation_user","{{%SellingConsultation}}","sc_user_id","{{%Profile}}","p_user_id"),
+
 
         ],$tableOptions);
+            $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%Consultation}}","con_id","CASCADE");
+            $this->addForeignKey("selling_consultation_user","{{%SellingConsultation}}","sc_user_id","{{%Profile}}","p_user_id","CASCADE");
+
+            $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%Consultation}}","con_id","CASCADE");
+            $this->addForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}","pc_user_id","{{%Profile}}","p_user_id","CASCADE");
+
+        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%Consultation}}","con_id","CASCADE");
+        $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_id","CASCADE");
 
     }
 

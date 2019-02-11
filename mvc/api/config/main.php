@@ -16,6 +16,7 @@ return [
         ]
     ],
     'components' => [
+
         'jwt' => [
             'class' => 'sizeg\jwt\Jwt',
             'key'   => 'secrett1112122212',
@@ -56,19 +57,27 @@ return [
             'rules' => [
 
                 ['class'=>'yii\rest\UrlRule',
-                    'controller'=>'v1/login',
-                ],
-
-                ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
 
-                ],
+                    ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/profile',
 
-                ],
+                    ],
 
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/purchase',
+
+                    ],
+
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/selling',
+                    ],
+
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/consultation',
+                    ],
             ],
         ],
     ],

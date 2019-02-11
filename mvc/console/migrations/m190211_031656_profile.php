@@ -10,21 +10,6 @@ class m190211_031656_profile extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function safeDown()
-    {
-        echo "m190211_031656_profile cannot be reverted.\n";
-
-        return false;
-    }
-
 
 
     public function up()
@@ -43,15 +28,15 @@ class m190211_031656_profile extends Migration
             'p_image'=>$this->string(),
             'p_gender'=>$this->boolean(),
             'p_date'=>$this->date(),
-            $this->addForeignKey("profile_user_id","{{%user}}",'id',"{{%Profile}}","p_user_id")
         ], $tableOptions);
 
+        $this->addForeignKey('p_u_i','{{%Profile}}','p_user_id','{{%user}}','id', 'CASCADE');
     }
 
     public function down()
     {
         $this->dropTable('{{%Profile}}');
-        $this->dropForeignKey("profile_user_id","Profile");
+        $this->dropForeignKey('p_u_i','Profile');
     }
 
 }

@@ -1,5 +1,7 @@
 <?php
+
 namespace api\modules\v1\controllers;
+
 
 use yii\rest\ActiveController;
 use yii\filters\VerbFilter;
@@ -11,6 +13,7 @@ use api\modules\v1\models\User;
 use sizeg\jwt\JwtHttpBearerAuth;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use yii\filters\Cors;
+
 
 class UserController extends ActiveController
 {
@@ -24,22 +27,21 @@ class UserController extends ActiveController
                 'application/json' => Response::FORMAT_JSON,
             ]
         ];
-//
+
+        $behaviors ['access']= [
+            'class'=> AccessControl::class,
+            'only' => ['login', 'logout', 'create','view'],
+            'rules'=>[
+                [    'allow' => true,
+                    'actions' => ['login', 'create'],
+                    'roles' => ['?'],
+                ],
+            ]
+        ];
 //        $behaviors['authenticator'] = [
 //            'class' => JwtHttpBearerAuth::class,
 //            ];
-//
-        $behaviors['access']=[
-            'class'=> AccessControl::class,
-                'only' => ['login', 'logout', 'reg'],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['login', 'reg'],
-                        'roles' => ['?'],
-                    ],
-                  ]
-        ];
+
         return $behaviors;
     }
 
@@ -74,7 +76,9 @@ class UserController extends ActiveController
     }
 
     public function actionLogin()
+
     {
+
         $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
         if (!$user)
         {
