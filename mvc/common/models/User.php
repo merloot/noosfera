@@ -6,6 +6,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use common\models\Token;
+
 /**
  * User model
  *
@@ -62,12 +63,12 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        Token::deleteAll('time < ' . time());
-        return static::find()->with('token')->one();
-    }
-    public function getToken()
-    {
-        return $this->hasMany(Token::className(),['t_user_id'=>'id']);
+        if ( !Yii::$app->jwt->validateToken($token))
+        {
+            return false;
+        }
+        $token = Yii::$app->jwt->getParser()->parse((string) $token);
+        return static::findOne($token->getClaim('uid')) ;
     }
     /**
      * Finds user by username
@@ -171,7 +172,5 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
-    public function date()
-    {
-    }
+
 }

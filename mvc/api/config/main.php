@@ -18,7 +18,7 @@ return [
     'components' => [
         'jwt' => [
             'class' => 'sizeg\jwt\Jwt',
-            'key'   => 'secret',
+            'key'   => 'secrett1112122212',
         ],
         'request' => [
             'csrfParam' => '_csrf-api',
@@ -32,10 +32,10 @@ return [
             'enableAutoLogin' => false,
             'enableSession' => false,
         ],
-// 'session' => [
-// // this is the name of the session cookie used for login on the frontend
-// 'name' => 'advanced-api',
-// ],
+        // 'session' => [
+        // this is the name of the session cookie used for login on the frontend
+        // 'name' => 'advanced-api',
+        // ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -54,30 +54,21 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ''=>'site/index',
-                'auth' => '/site/login',
-                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-// ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/user',
-// 'tokens' => [
-// '{id}' => '<id:\\w+>'
-// ],
-// ],
+
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/login',
-                    'pluralize'=>false
                 ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
-                    'pluralize'=>false,
 
                 ],
+
                 ['class'=>'yii\rest\UrlRule',
-                    'controller'=> 'v1/post',
-                    'tokens'=>[
-                        '{id}'=> '<id:\\w+>'
-                    ],
+                    'controller'=> 'v1/profile',
+
                 ],
+
             ],
         ],
     ],

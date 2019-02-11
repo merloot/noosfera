@@ -1,8 +1,5 @@
 <?php
-
 namespace api\modules\v1\controllers;
-
-
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -10,15 +7,18 @@ use yii\filters\AccessControl;
 use yii\filters\ContentNegotiator;
 use yii\web\Response;
 use common\models\User;
-use common\models\Token;
 use yii\filters\Cors;
+use yii\filters\auth\CompositeAuth;
+use yii\filters\auth\HttpBasicAuth;
+use yii\filters\auth\HttpBearerAuth;
+use yii\filters\auth\QueryParamAuth;
 use sizeg\jwt\JwtHttpBearerAuth;
+
 
 class LoginController extends Controller
 {
     public function behaviors()
     {
-
         return [
             'corsFilter' => [
                 'class' => Cors::className(),
@@ -28,26 +28,7 @@ class LoginController extends Controller
                     'Access-Control-Request-Headers' => ['*'],
                 ],
             ],
-            'authenticator'=> [
-                'class' => JwtHttpBearerAuth::class,
-            ],
-//            'verbs' => [
-//                'class' => VerbFilter::className(),
-//                'actions' => [
-//                    'index'=>['post', 'options'],
-//                ]
-//            ],
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'rules' => [
-//                    [
-//                        'allow' => true,
-//                        'actions' => [ 'index'],
-//                        'roles' => ['*'],
-//                    ],
-//                ],
-//            ],
-            'contentNegotiator' => [
+              'contentNegotiator' => [
                 'class' => ContentNegotiator::className(),
                 'formats' => [
                     'application/json' => Response::FORMAT_JSON,
@@ -55,8 +36,5 @@ class LoginController extends Controller
             ],
         ];
     }
-
-
-
 
 }
