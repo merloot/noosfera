@@ -55,24 +55,25 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-
+                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
-
                     ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/profile',
-
                     ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/purchase',
-
                     ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/selling',
+                    ],
+
+                ['class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/competence',
                     ],
 
                 ['class'=>'yii\rest\UrlRule',

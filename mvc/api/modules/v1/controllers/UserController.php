@@ -27,17 +27,12 @@ class UserController extends ActiveController
                 'application/json' => Response::FORMAT_JSON,
             ]
         ];
-
-        $behaviors ['access']= [
-            'class'=> AccessControl::class,
-            'only' => ['login', 'logout', 'create','view'],
-            'rules'=>[
-                [    'allow' => true,
-                    'actions' => ['login', 'create'],
-                    'roles' => ['?'],
-                ],
-            ]
-        ];
+//
+//        $behaviors ['cors']=[
+//            'class'=> Cors::class,
+//            'Origin' => ['*'],
+//            'Access-Control-Request-Method' => ['GET', 'HEAD', 'OPTIONS','POST'],
+//        ];
 //        $behaviors['authenticator'] = [
 //            'class' => JwtHttpBearerAuth::class,
 //            ];
@@ -46,6 +41,7 @@ class UserController extends ActiveController
     }
 
     public $modelClass = 'api\modules\v1\models\User';
+
 
 
     public function actionReg()
@@ -99,7 +95,7 @@ class UserController extends ActiveController
             else{
                 $signer = new Sha256();
                 $token = Yii::$app->jwt->getBuilder()
-                    ->set('uid', $user->getPrimaryKey())
+                    ->set('id', $user->getPrimaryKey())
                     ->sign($signer,Yii::$app->jwt->key)
                     ->getToken();
 
@@ -111,5 +107,6 @@ class UserController extends ActiveController
 
             }
     }
+
 }
 

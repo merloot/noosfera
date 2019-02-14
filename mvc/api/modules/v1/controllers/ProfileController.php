@@ -11,6 +11,7 @@ use yii\filters\AccessControl;
 use yii\rest\ActiveController;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\filters\ContentNegotiator;
+use yii\behaviors\BlameableBehavior;
 
 
 class ProfileController extends ActiveController
@@ -26,6 +27,11 @@ class ProfileController extends ActiveController
             ]
         ];
 
+//        $behaviors['Blameable'] = [
+//            'class'=> BlameableBehavior::class,
+//            'createdByAttribute' => 'p_user_id',
+//            'updatedByAttribute' => 'p_user_id',
+//        ];
         $behaviors['authenticator'] = [
             'class' => JwtHttpBearerAuth::class,
         ];

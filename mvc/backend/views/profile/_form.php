@@ -14,21 +14,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'p_user_id')->textInput() ?>
 
-    <?= $form->field($model, 'p_name')->textInput() ?>
+    <?= $form->field($model, 'p_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'p_second_name')->textInput() ?>
+    <?= $form->field($model, 'p_description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'p_family')->textInput() ?>
-
-    <?= $form->field($model, 'p_description')->textInput() ?>
-
-    <?= $form->field($model, 'p_image')->textInput() ?>
+    <?= $form->field($model, 'p_image')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'p_gender')->checkbox() ?>
 
     <?= $form->field($model, 'p_date')->textInput() ?>
-
-    <?= $form->field($model, 'p_id_profile_competence')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

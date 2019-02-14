@@ -37,7 +37,7 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pc_user_id', 'pc_con_id', 'pc_title'], 'required'],
+            [['pc_title'], 'required'],
             [['pc_user_id', 'pc_con_id'], 'default', 'value' => null],
             [['pc_user_id', 'pc_con_id'], 'integer'],
             [['pc_date', 'pc_begin_time', 'pc_end_time'], 'safe'],

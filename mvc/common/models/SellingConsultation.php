@@ -37,7 +37,7 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sc_user_id', 'sc_con_id', 'sc_title'], 'required'],
+//            [['sc_title'], 'required'],
             [['sc_user_id', 'sc_con_id'], 'default', 'value' => null],
             [['sc_user_id', 'sc_con_id'], 'integer'],
             [['sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],

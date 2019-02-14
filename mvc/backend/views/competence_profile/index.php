@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\ProfileSearch */
+/* @var $searchModel common\models\CompetenceProfileSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Profiles';
+$this->title = 'CompetenceController Profiles';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="profile-index">
+<div class="competence-profile-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Profile', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create CompetenceController Profile', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,13 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'p_id',
-            'p_user_id',
-            'p_name',
-            'p_description',
-            'p_image',
-            //'p_gender:boolean',
-            //'p_date',
+            'cp_id',
+            'cp_com_id',
+            'cp_p_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

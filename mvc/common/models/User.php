@@ -5,7 +5,6 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use common\models\Token;
 
 /**
  * User model
@@ -63,12 +62,12 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        if ( !Yii::$app->jwt->validateToken($token))
+        if (!Yii::$app->jwt->validateToken($token))
         {
             return false;
         }
         $token = Yii::$app->jwt->getParser()->parse((string) $token);
-        return static::findOne($token->getClaim('uid')) ;
+        return static::findOne($token->getClaim('id'));
     }
     /**
      * Finds user by username

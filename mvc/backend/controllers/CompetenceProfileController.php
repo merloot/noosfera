@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Competence;
-use backend\models\CompetenceSearch;
+use common\models\CompetenceProfile;
+use common\models\CompetenceProfileSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CompetenceController implements the CRUD actions for CompetenceController model.
+ * CompetenceProfileController implements the CRUD actions for CompetenceProfile model.
  */
-class CompetenceController extends Controller
+class CompetenceProfileController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Lists all CompetenceController models.
+     * Lists all CompetenceProfile models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CompetenceSearch();
+        $searchModel = new CompetenceProfileSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Displays a single CompetenceController model.
+     * Displays a single CompetenceProfile model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Creates a new CompetenceController model.
+     * Creates a new CompetenceProfile model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Competence();
+        $model = new CompetenceProfile();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->com_id]);
+            return $this->redirect(['view', 'id' => $model->cp_id]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Updates an existing CompetenceController model.
+     * Updates an existing CompetenceProfile model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class CompetenceController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->com_id]);
+            return $this->redirect(['view', 'id' => $model->cp_id]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Deletes an existing CompetenceController model.
+     * Deletes an existing CompetenceProfile model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Finds the CompetenceController model based on its primary key value.
+     * Finds the CompetenceProfile model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Competence the loaded model
+     * @return CompetenceProfile the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Competence::findOne($id)) !== null) {
+        if (($model = CompetenceProfile::findOne($id)) !== null) {
             return $model;
         }
 
