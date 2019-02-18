@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\CompetenceProfile */
 
 $this->title = $model->cp_id;
-$this->params['breadcrumbs'][] = ['label' => 'CompetenceController Profiles', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'CompetencePController Profiles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

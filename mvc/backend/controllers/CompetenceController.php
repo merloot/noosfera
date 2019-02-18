@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CompetenceController implements the CRUD actions for CompetenceController model.
+ * CompetencePController implements the CRUD actions for CompetencePController model.
  */
 class CompetenceController extends Controller
 {
@@ -30,7 +30,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Lists all CompetenceController models.
+     * Lists all CompetencePController models.
      * @return mixed
      */
     public function actionIndex()
@@ -45,7 +45,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Displays a single CompetenceController model.
+     * Displays a single CompetencePController model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,7 +58,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Creates a new CompetenceController model.
+     * Creates a new CompetencePController model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
@@ -76,7 +76,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Updates an existing CompetenceController model.
+     * Updates an existing CompetencePController model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Deletes an existing CompetenceController model.
+     * Deletes an existing CompetencePController model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,7 +110,7 @@ class CompetenceController extends Controller
     }
 
     /**
-     * Finds the CompetenceController model based on its primary key value.
+     * Finds the CompetencePController model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
      * @return Competence the loaded model

@@ -5,7 +5,7 @@ namespace backend\models;
 use Yii;
 
 /**
- * This is the model class for table "CompetenceController".
+ * This is the model class for table "CompetencePController".
  *
  * @property int $com_id
  * @property string $competence
@@ -17,7 +17,7 @@ class Competence extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'CompetenceController';
+        return 'CompetencePController';
     }
 
     /**
@@ -38,7 +38,7 @@ class Competence extends \yii\db\ActiveRecord
     {
         return [
             'com_id' => 'Com ID',
-            'competence' => 'CompetenceController',
+            'competence' => 'CompetencePController',
         ];
     }
 }

@@ -36,7 +36,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label'=>'CompetenceController','url'=>['competence/index']],
+        ['label'=>'CompetencePController','url'=>['competence/index']],
         ['label'=>'Profile', 'url'=> ['profile/index']],
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label'=>'Competence_profile','url'=>['/competence_profile/index']],

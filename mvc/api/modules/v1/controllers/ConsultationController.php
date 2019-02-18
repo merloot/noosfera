@@ -2,19 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: user14
- * Date: 13.02.19
- * Time: 14:54
+ * Date: 11.02.19
+ * Time: 15:38
  */
 
 namespace api\modules\v1\controllers;
 
-use sizeg\jwt\JwtHttpBearerAuth;
-use yii\filters\ContentNegotiator;
+
 use yii\rest\ActiveController;
+use yii\filters\ContentNegotiator;
+use sizeg\jwt\JwtHttpBearerAuth;
 use yii\web\Response;
 
-class CompetenceController extends ActiveController
+class ConsultationController extends ActiveController
 {
+
     public function behaviors()
     {
         $behaviors = parent::behaviors();
@@ -33,5 +35,7 @@ class CompetenceController extends ActiveController
         return $behaviors;
     }
 
-    public $modelClass = 'common\models\CompetenceProfile';
+
+    public $modelClass = 'common\models\Consultation';
+
 }

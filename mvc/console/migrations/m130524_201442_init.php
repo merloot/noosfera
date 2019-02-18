@@ -24,7 +24,7 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->createTable('{{%Consultation}}', [
+        $this->createTable('{{%ConsultationController}}', [
             'con_id' => $this->primaryKey(),
             'con_pc_user_id'=>$this->bigInteger(),
             'con_sc_user_id' => $this->bigInteger(),
@@ -63,13 +63,13 @@ class m130524_201442_init extends Migration
 
         ],$tableOptions);
 
-        $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%Consultation}}","con_id","CASCADE");
+        $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%ConsultationController}}","con_id","CASCADE");
         $this->addForeignKey("selling_consultation_user","{{%SellingConsultation}}","sc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
-        $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%Consultation}}","con_id","CASCADE");
+        $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%ConsultationController}}","con_id","CASCADE");
         $this->addForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}","pc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
-        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%Consultation}}","con_id","CASCADE");
+        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%ConsultationController}}","con_id","CASCADE");
         $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_id","CASCADE");
 
 
@@ -78,7 +78,7 @@ class m130524_201442_init extends Migration
     public function down()
     {
         $this->dropTable('{{%user}}');
-        $this->dropTable('{{%Consultation}}');
+        $this->dropTable('{{%ConsultationController}}');
         $this->dropTable('{{%SellingConsultation}}');
         $this->dropTable('{{%PurchaseConsultation}}');
         $this->dropForeignKey("selling_consultation","{{%SellingConsultation}}");

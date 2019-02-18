@@ -27,14 +27,10 @@ class ProfileController extends ActiveController
             ]
         ];
 
-//        $behaviors['Blameable'] = [
-//            'class'=> BlameableBehavior::class,
-//            'createdByAttribute' => 'p_user_id',
-//            'updatedByAttribute' => 'p_user_id',
-//        ];
         $behaviors['authenticator'] = [
             'class' => JwtHttpBearerAuth::class,
         ];
+
         return $behaviors;
     }
     public $modelClass = 'common\models\Profile';

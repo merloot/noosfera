@@ -20,7 +20,7 @@ class m190211_035034_Competence extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%CompetenceController}}', [
+        $this->createTable('{{%CompetencePController}}', [
             'com_id' => $this->primaryKey(),
             'competence' => $this->string(100)->notNull(),
         ], $tableOptions);
@@ -32,12 +32,12 @@ class m190211_035034_Competence extends Migration
 
         ],$tableOptions);
 
-            $this->addForeignKey("competence_profile","{{%CompetenceProfile}}",'cp_com_id',"{{%CompetenceController}}","com_id",'CASCADE');
+            $this->addForeignKey("competence_profile","{{%CompetenceProfile}}",'cp_com_id',"{{%CompetencePController}}","com_id",'CASCADE');
             $this->addForeignKey("competence_profile_user","{{%CompetenceProfile}}","cp_p_id","{{%Profile}}","p_user_id","CASCADE");
     }
     public function down()
     {
-        $this->dropTable('{{%CompetenceController}}');
+        $this->dropTable('{{%CompetencePController}}');
         $this->dropTable('{{%CompetenceProfile}}');
         $this->dropForeignKey("competence_profile","{{%CompetenceProfile}}");
         $this->dropForeignKey("competence_profile_user","{{%CompetenceProfile}}");

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Competence */
 
-$this->title = 'Update CompetenceController: ' . $model->com_id;
+$this->title = 'Update CompetencePController: ' . $model->com_id;
 $this->params['breadcrumbs'][] = ['label' => 'Competences', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->com_id, 'url' => ['view', 'id' => $model->com_id]];
 $this->params['breadcrumbs'][] = 'Update';

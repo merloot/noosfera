@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use backend\models\Competence;
 
 /**
- * CompetenceSearch represents the model behind the search form of `backend\models\CompetenceController`.
+ * CompetenceSearch represents the model behind the search form of `backend\models\CompetencePController`.
  */
 class CompetenceSearch extends Competence
 {

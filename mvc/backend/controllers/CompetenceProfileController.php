@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CompetenceProfileController implements the CRUD actions for CompetenceProfile model.
+ * CompetencePController implements the CRUD actions for CompetenceProfile model.
  */
 class CompetenceProfileController extends Controller
 {
