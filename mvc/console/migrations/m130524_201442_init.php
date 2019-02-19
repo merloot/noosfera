@@ -63,14 +63,14 @@ class m130524_201442_init extends Migration
 
         ],$tableOptions);
 
-        $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%ConsultationController}}","con_id","CASCADE");
+        $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%Consultation}}","con_id","CASCADE");
         $this->addForeignKey("selling_consultation_user","{{%SellingConsultation}}","sc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
-        $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%ConsultationController}}","con_id","CASCADE");
+        $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%Consultation}}","con_id","CASCADE");
         $this->addForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}","pc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
-        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%ConsultationController}}","con_id","CASCADE");
-        $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_id","CASCADE");
+//        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%Consultation}}","con_id","CASCADE");
+//        $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_id","CASCADE");
 
 
     }

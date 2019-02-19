@@ -68,9 +68,12 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+    public function getTagCon()
+    {
+        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])->viaTable('TagsConsultation', ['tc_con_id' => 'pc_con_id']);
+    }
+
     public function getPcCon()
     {
         return $this->hasOne(Consultation::className(), ['con_id' => 'pc_con_id']);

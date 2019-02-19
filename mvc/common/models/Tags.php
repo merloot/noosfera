@@ -9,6 +9,8 @@ use Yii;
  *
  * @property int $tag_id
  * @property string $tag_name
+ *
+ * @property TagsConsultation[] $tagsConsultations
  */
 class Tags extends \yii\db\ActiveRecord
 {
@@ -40,5 +42,13 @@ class Tags extends \yii\db\ActiveRecord
             'tag_id' => 'Tag ID',
             'tag_name' => 'Tag Name',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTagsConsultations()
+    {
+        return $this->hasMany(TagsConsultation::className(), ['tc_tag_id' => 'tag_id']);
     }
 }

@@ -103,7 +103,7 @@ class Profile extends \yii\db\ActiveRecord
 
     public function extraFields()
     {
-        return ['competenceProfile'];
+        return ['competenceProfile','cpCom'];
     }
 
 //    public function beforeValidate()

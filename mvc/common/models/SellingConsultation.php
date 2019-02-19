@@ -102,23 +102,21 @@ class SellingConsultation extends \yii\db\ActiveRecord
         }
     }
 
+    public function getTagCon()
+    {
+        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])->viaTable('TagsConsultation', ['tc_con_id' => 'sc_con_id']);
+    }
 
     public function getComSel()
     {
 
         return $this->hasMany(CompetenceProfile::className(),['cp_p_id'=> 'sc_user_id']);
-
-    }
-
-    public function getTags()
-    {
-        return $this->hasMany(Tags::className()[''])
     }
 
     public function extraFields()
     {
 
-        return ['scUser','scCom'];
+        return ['scUser','scCom','tagCon'];
 
     }
 
