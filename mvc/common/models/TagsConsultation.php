@@ -75,4 +75,11 @@ class TagsConsultation extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Tags::className(), ['tag_id' => 'tc_tag_id']);
     }
+
+    public function extraFields()
+    {
+        return [''];
+    }
+
+
 }

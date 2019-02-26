@@ -13,6 +13,7 @@ use yii\filters\ContentNegotiator;
 use yii\rest\ActiveController;
 use yii\web\Response;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 class SellingController extends ActiveController
 {
     public function behaviors()
@@ -29,6 +30,24 @@ class SellingController extends ActiveController
 //            'class' => JwtHttpBearerAuth::class,
 //        ];
 //
+//          $behaviors['verb']=[
+//              'class'=> VerbFilter::class,
+//              'actions'=>[
+//              'delete'=>['post'],
+//              ],
+//
+//              'access' => [
+//                  'class' => AccessControl::class,
+//                  'only' => ['create','update','delete'],
+//                  'rules' => [
+//                      [
+//                          'actions' => ['create','update','delete'],
+//                          'allow' => true,
+//                          'roles' => ['?'],
+//                      ],
+//                  ],
+//              ],
+//              ];
 //        $behaviors['access']=[
 //            'class'=>AccessControl::class,
 //            'only'=>['create','update','view'],

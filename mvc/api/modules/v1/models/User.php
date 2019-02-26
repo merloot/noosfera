@@ -1,12 +1,12 @@
 <?php
 namespace api\modules\v1\models;
 
+use common\models\Profile;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use common\models\Token;
 
 /**
  * User model
@@ -28,8 +28,9 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_ACTIVE = 10;
 
 
+//public $password;
 
-    /**
+/**
      * {@inheritdoc}
      */
     public static function tableName()
@@ -53,20 +54,16 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-//            ['username', 'trim'],
-//            ['username', 'required'],
-//            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-//            ['username', 'string', 'min' => 2, 'max' => 255],
-//
-//            ['email', 'trim'],
-//            ['email', 'required'],
-//            ['email', 'email'],
-//            ['email', 'string', 'max' => 255],
-//            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
-//
+            ['email', 'trim'],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'string', 'max' => 40],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+
 //            ['password', 'required'],
 //            ['password', 'string', 'min' => 6],
-            ['email' , 'safe'],
+
+//            ['email' , 'safe'],
             ['password','safe'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -76,12 +73,21 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * {@inheritdoc}
      */
+
+    public function extraFields()
+    {
+        return ['profile'];
+    }
+
+    public function getProfile()
+    {
+        $this->hasOne(Profile::className(),['p_user_id'=>'id']);
+    }
+
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
-
-
 
     /**
      * {@inheritdoc}
@@ -89,10 +95,6 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null)
     {
        return static::findOne(['access_token' => $token]);
-    }
-    public function getToken()
-    {
-        return $this->hasMany(Token::className(),['user_id'=>'id']);
     }
     /**
      * Finds user by username

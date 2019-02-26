@@ -12,26 +12,47 @@ use yii\rest\ActiveController;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\filters\ContentNegotiator;
 use yii\behaviors\BlameableBehavior;
-
+use yii\web\ServerErrorHttpException;
+use yii\filters\VerbFilter;
 
 class ProfileController extends ActiveController
 {
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-        $behaviors['ContentNegotiator']=[
-            'class'=> ContentNegotiator::class,
-            'formats' =>[
+        $behaviors['ContentNegotiator'] = [
+            'class' => ContentNegotiator::class,
+            'formats' => [
                 'application/json' => Response::FORMAT_JSON,
-                'application/xml' => Response::FORMAT_XML,
-            ]
-        ];
-
+            ],
+            ];
         $behaviors['authenticator'] = [
             'class' => JwtHttpBearerAuth::class,
         ];
-
         return $behaviors;
     }
     public $modelClass = 'common\models\Profile';
+
+//    function actions()
+//    {
+//        $actions = parent::actions();
+//        unset($actions['update']);
+//        return $actions;
+//    }
+//
+//    public function actionUpdate($p_id)
+//    {
+//        $model = Profile::find()->where(['p_id'=>$p_id])->one();
+//
+//
+//        $model->load(\Yii::$app->getRequest()->getBodyParams(), '');
+//
+//        if ($model->save() === false && !$model->hasErrors())
+//        {
+//            throw new ServerErrorHttpException('Failed to update the object for unknown reason.');
+//        }
+//        return \Yii::$app->getRequest()->getBodyParams();
+//
+//    }
+
 }

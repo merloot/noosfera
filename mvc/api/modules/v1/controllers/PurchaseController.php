@@ -23,13 +23,12 @@ class PurchaseController extends ActiveController
             'class'=> ContentNegotiator::class,
             'formats' =>[
                 'application/json' => Response::FORMAT_JSON,
-                'application/xml' => Response::FORMAT_XML,
             ]
         ];
 
-        $behaviors['authenticator'] = [
-            'class' => JwtHttpBearerAuth::class,
-        ];
+//        $behaviors['authenticator'] = [
+//            'class' => JwtHttpBearerAuth::class,
+//        ];
 
         return $behaviors;
     }

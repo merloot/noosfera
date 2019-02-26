@@ -65,9 +65,9 @@ class ProfileSearch extends Profile
             'p_date' => $this->p_date,
         ]);
 
-        $query->andFilterWhere(['ilike', 'p_name', $this->p_name])
-            ->andFilterWhere(['ilike', 'p_description', $this->p_description])
-            ->andFilterWhere(['ilike', 'p_image', $this->p_image]);
+        $query->andFilterWhere(['like', 'p_name', $this->p_name])
+            ->andFilterWhere(['like', 'p_description', $this->p_description])
+            ->andFilterWhere(['like', 'p_image', $this->p_image]);
 
         return $dataProvider;
     }

@@ -1,5 +1,6 @@
 Options +FollowSymLinks
-Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Origin "http://localhost:8080"
+Header set Access-Control-Allow-Headers "Authorization"
 IndexIgnore */*
 RewriteEngine on
 # if a directory or a file exists, use it directly

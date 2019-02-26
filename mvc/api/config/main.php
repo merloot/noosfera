@@ -22,7 +22,7 @@ return [
             'key'   => 'secrett1112122212',
         ],
         'request' => [
-            'csrfParam' => '_csrf-api',
+         //   'csrfParam' => '_csrf-api',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]
@@ -55,30 +55,47 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                'v1/user/<action:user|login>'=>'v1/user/<action>', //Альтернатива работы авторизации
+//                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+// Если брать строку с actions не работает вызов  action/login
+
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
-                    ],
+
+                ],
+
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/tag',
+                ],
+
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=>'v1/tag_con',
+
+                ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/profile',
-                    ],
+                ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/purchase',
-                    ],
+                ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/selling',
-                    ],
+                ],
 
                 ['class'=> 'yii\rest\UrlRule',
                     'controller'=>'v1/competence',
-                    ],
+                ],
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=>'v1/consultation',
-                    ],
+                ],
+
+                ['class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/com',
+                ],
             ],
         ],
     ],

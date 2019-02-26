@@ -13,6 +13,7 @@ use api\modules\v1\models\User;
 use sizeg\jwt\JwtHttpBearerAuth;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use yii\filters\Cors;
+use common\models\Profile;
 
 
 class UserController extends ActiveController
@@ -41,8 +42,6 @@ class UserController extends ActiveController
     }
 
     public $modelClass = 'api\modules\v1\models\User';
-
-
 
     public function actionReg()
 
@@ -102,6 +101,9 @@ class UserController extends ActiveController
                 return  [
                     'success'=> true,
                     'data'=> (string) ($token),
+                    'id'=> $user->getPrimaryKey(),
+//                    'p_id'=>Yii::$app->user->gprofile,
+                    'p_id'=>Profile::find()->select('p_id')->where(['p_user_id'=>$user->getPrimaryKey()])->one(),
                 ];
 
 
