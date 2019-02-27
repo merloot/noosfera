@@ -28,9 +28,9 @@ class ConsultationController extends ActiveController
             ]
         ];
 
-        $behaviors['authenticator'] = [
-            'class' => JwtHttpBearerAuth::class,
-        ];
+//        $behaviors['authenticator'] = [
+//            'class' => JwtHttpBearerAuth::class,
+//        ];
 
         return $behaviors;
     }

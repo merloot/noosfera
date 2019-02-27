@@ -25,10 +25,10 @@ class ComController extends ActiveController
                 'application/xml' => Response::FORMAT_XML,
             ]
         ];
-
-        $behaviors['authenticator'] = [
-            'class' => JwtHttpBearerAuth::class,
-        ];
+//
+//        $behaviors['authenticator'] = [
+//            'class' => JwtHttpBearerAuth::class,
+//        ];
 
         return $behaviors;
     }

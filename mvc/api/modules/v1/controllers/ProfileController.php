@@ -26,33 +26,11 @@ class ProfileController extends ActiveController
                 'application/json' => Response::FORMAT_JSON,
             ],
             ];
-        $behaviors['authenticator'] = [
-            'class' => JwtHttpBearerAuth::class,
-        ];
+//        $behaviors['authenticator'] = [
+//            'class' => JwtHttpBearerAuth::class,
+//        ];
         return $behaviors;
     }
     public $modelClass = 'common\models\Profile';
-
-//    function actions()
-//    {
-//        $actions = parent::actions();
-//        unset($actions['update']);
-//        return $actions;
-//    }
-//
-//    public function actionUpdate($p_id)
-//    {
-//        $model = Profile::find()->where(['p_id'=>$p_id])->one();
-//
-//
-//        $model->load(\Yii::$app->getRequest()->getBodyParams(), '');
-//
-//        if ($model->save() === false && !$model->hasErrors())
-//        {
-//            throw new ServerErrorHttpException('Failed to update the object for unknown reason.');
-//        }
-//        return \Yii::$app->getRequest()->getBodyParams();
-//
-//    }
 
 }
