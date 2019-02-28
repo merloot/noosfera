@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Header set Access-Control-Allow-Origin "http://localhost:8080"
+Header set Access-Control-Allow-Origin "http://students.thesamany.tom.ru"Header set Access-Control-Allow-Headers "Authorization"
+Header set Access-Control-Allow-Credentials true
+IndexIgnore */*
+RewriteEngine on
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule . index.php

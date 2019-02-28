@@ -102,7 +102,7 @@ class UserController extends ActiveController
                     'success'=> true,
                     'data'=> (string) ($token),
                     'id'=> $user->getPrimaryKey(),
-//                    'p_id'=>Yii::$app->user->gprofile,
+//                    'p_id'=> $user->Profile->p_user_id,
                     'p_id'=>Profile::find()->select('p_id')->where(['p_user_id'=>$user->getPrimaryKey()])->one(),
                 ];
 
