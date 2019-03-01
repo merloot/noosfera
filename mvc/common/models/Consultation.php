@@ -95,7 +95,7 @@ class Consultation extends \yii\db\ActiveRecord
     {
         if ($insert)
         {
-            $this->con_title =$this->conSc->sc_title ;
+//            $this->con_title =$this->conSc->sc_title ;
 //            $this->con_title = $this->conPc->pc_title;
             $this->con_description = $this->conSc->sc_description;
             $this->con_begin_time = $this->conPc->pc_begin_time;

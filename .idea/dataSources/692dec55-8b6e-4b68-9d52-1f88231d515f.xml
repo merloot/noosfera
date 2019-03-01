@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="noosfera@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
     <root id="1"/>
     <database id="2" parent="1" name="noosfera">
       <ObjectId>16384</ObjectId>
@@ -33,31 +33,26 @@
       <ObjectId>16434</ObjectId>
       <StateNumber>555</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="10" parent="3" name="Profile_p_id_seq">
       <ObjectId>16408</ObjectId>
       <StateNumber>548</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="11" parent="3" name="Token_id_token_seq">
       <ObjectId>16447</ObjectId>
       <StateNumber>560</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="12" parent="3" name="competence_comp_id_seq">
       <ObjectId>16418</ObjectId>
       <StateNumber>549</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="13" parent="3" name="user_id_seq">
       <ObjectId>16390</ObjectId>
       <StateNumber>545</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="14" parent="3" name="CompetenceProfile">
       <ObjectId>16436</ObjectId>
@@ -85,21 +80,20 @@
     </table>
     <column id="20" parent="14" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>555</StateNumber>
-      <SequenceName>CompetenceProfile_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;CompetenceProfile_id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
     <column id="21" parent="14" name="com_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>555</StateNumber>
     </column>
     <column id="22" parent="14" name="p_id">
       <Position>3</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>555</StateNumber>
     </column>
@@ -116,62 +110,61 @@
     </key>
     <column id="25" parent="15" name="p_id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
-      <SequenceName>Profile_p_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;Profile_p_id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
     <column id="26" parent="15" name="p_user_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="27" parent="15" name="p_name">
       <Position>3</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="28" parent="15" name="p_second_name">
       <Position>4</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="29" parent="15" name="p_family">
       <Position>5</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="30" parent="15" name="p_description">
       <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>548</StateNumber>
     </column>
     <column id="31" parent="15" name="p_rating">
       <Position>7</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <StateNumber>548</StateNumber>
       <DefaultExpression>0</DefaultExpression>
     </column>
     <column id="32" parent="15" name="p_image">
       <Position>8</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="33" parent="15" name="p_id_profile_competence">
       <Position>9</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>548</StateNumber>
     </column>
     <column id="34" parent="15" name="p_gender">
       <Position>10</Position>
-      <DataType>boolean|0</DataType>
+      <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>563</StateNumber>
     </column>
@@ -208,27 +201,26 @@
     </key>
     <column id="41" parent="16" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>568</StateNumber>
-      <SequenceName>Token_id_token_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;Token_id_token_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
     <column id="42" parent="16" name="id_user">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
     </column>
     <column id="43" parent="16" name="expire_time">
       <Position>3</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
     </column>
     <column id="44" parent="16" name="token">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
     </column>
@@ -255,15 +247,14 @@
     </key>
     <column id="49" parent="17" name="com_id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>553</StateNumber>
-      <SequenceName>competence_comp_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;competence_comp_id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="50" parent="17" name="competence">
       <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>549</StateNumber>
     </column>
@@ -280,13 +271,13 @@
     </key>
     <column id="53" parent="18" name="version">
       <Position>1</Position>
-      <DataType>varchar(180)|0</DataType>
+      <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>543</StateNumber>
     </column>
     <column id="54" parent="18" name="apply_time">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <StateNumber>543</StateNumber>
     </column>
     <index id="55" parent="18" name="migration_pkey">
@@ -302,51 +293,50 @@
     </key>
     <column id="57" parent="19" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
-      <SequenceName>user_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;user_id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="58" parent="19" name="auth_key">
       <Position>3</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
     </column>
     <column id="59" parent="19" name="password_hash">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
     </column>
     <column id="60" parent="19" name="password_reset_token">
       <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>545</StateNumber>
     </column>
     <column id="61" parent="19" name="email">
       <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
     </column>
     <column id="62" parent="19" name="status">
       <Position>7</Position>
-      <DataType>smallint|0</DataType>
+      <DataType>smallint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
       <DefaultExpression>10</DefaultExpression>
     </column>
     <column id="63" parent="19" name="created_at">
       <Position>8</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
     </column>
     <column id="64" parent="19" name="updated_at">
       <Position>9</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
     </column>
