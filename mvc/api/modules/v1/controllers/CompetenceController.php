@@ -22,8 +22,7 @@ class CompetenceController extends ActiveController
             'class'=> ContentNegotiator::class,
             'formats' =>[
                 'application/json' => Response::FORMAT_JSON,
-                'application/xml' => Response::FORMAT_XML,
-            ]
+                ]
         ];
 
 //        $behaviors['authenticator'] = [
@@ -32,6 +31,10 @@ class CompetenceController extends ActiveController
 
         return $behaviors;
     }
+    public $serializer = [
+        'class'=>'yii\rest\Serializer',
+        'collectionEnvelope'=>'items',
+    ];
 
     public $modelClass = 'common\models\CompetenceProfile';
 }

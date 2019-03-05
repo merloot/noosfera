@@ -55,7 +55,8 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                'v1/user/<action:user|login>'=>'v1/user/<action>', //Альтернатива работы авторизации
+                'v1/user/<action:user|login>'=>'v1/user/<action>',
+                //Альтернатива работы авторизации
 //                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
 // Если брать строку с actions не работает вызов  action/login
 

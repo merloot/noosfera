@@ -28,18 +28,17 @@ class UserController extends ActiveController
                 'application/json' => Response::FORMAT_JSON,
             ]
         ];
-//
-//        $behaviors ['cors']=[
-//            'class'=> Cors::class,
-//            'Origin' => ['*'],
-//            'Access-Control-Request-Method' => ['GET', 'HEAD', 'OPTIONS','POST'],
-//        ];
 //        $behaviors['authenticator'] = [
 //            'class' => JwtHttpBearerAuth::class,
 //            ];
 
         return $behaviors;
     }
+
+    public $serializer = [
+        'class'=>'yii\rest\Serializer',
+        'collectionEnvelope'=>'items',
+    ];
 
     public $modelClass = 'api\modules\v1\models\User';
 
@@ -102,7 +101,7 @@ class UserController extends ActiveController
                     'success'=> true,
                     'data'=> (string) ($token),
                     'id'=> $user->getPrimaryKey(),
-//                    'p_id'=> $user->Profile->p_user_id,
+//                    'p_id'=> $user->profile->p_user_id,
                     'p_id'=>Profile::find()->select('p_id')->where(['p_user_id'=>$user->getPrimaryKey()])->one(),
                 ];
 

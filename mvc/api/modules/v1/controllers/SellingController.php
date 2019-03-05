@@ -8,7 +8,9 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\SellingConsultation;
 use sizeg\jwt\JwtHttpBearerAuth;
+use yii\data\ActiveDataProvider;
 use yii\filters\ContentNegotiator;
 use yii\rest\ActiveController;
 use yii\web\Response;
@@ -68,7 +70,12 @@ class SellingController extends ActiveController
 //            ];
         return $behaviors;
     }
+    public $serializer = [
+        'class'=>'yii\rest\Serializer',
+        'collectionEnvelope'=>'items',
+    ];
 
     public $modelClass = 'common\models\SellingConsultation';
+
 
 }

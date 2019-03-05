@@ -35,6 +35,11 @@ class ConsultationController extends ActiveController
         return $behaviors;
     }
 
+    public $serializer = [
+        'class'=>'yii\rest\Serializer',
+        'collectionEnvelope'=>'items',
+    ];
+
 
     public $modelClass = 'common\models\Consultation';
 
