@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\SellingConsultation;
+use common\models\PurchaseConsultation;
 
 /**
- * SellingConsultationSearch represents the model behind the search form of `common\models\SellingConsultation`.
+ * PurchaseConsultationSearch represents the model behind the search form of `common\models\PurchaseConsultation`.
  */
-class SellingConsultationSearch extends SellingConsultation
+class PurchaseConsultationSearch extends PurchaseConsultation
 {
     /**
      * {@inheritdoc}
@@ -17,10 +17,10 @@ class SellingConsultationSearch extends SellingConsultation
     public function rules()
     {
         return [
-            [['sc_id', 'sc_user_id', 'sc_com_id'], 'integer'],
-            [['sc_title', 'sc_description', 'sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],
-            [['sc_price'], 'number'],
-            [['sc_like'], 'boolean'],
+            [['pc_id', 'pc_user_id', 'pc_com_id'], 'integer'],
+            [['pc_title', 'pc_description', 'pc_date', 'pc_begin_time', 'pc_end_time'], 'safe'],
+            [['pc_price'], 'number'],
+            [['pc_like'], 'boolean'],
         ];
     }
 
@@ -42,7 +42,7 @@ class SellingConsultationSearch extends SellingConsultation
      */
     public function search($params)
     {
-        $query = SellingConsultation::find();
+        $query = PurchaseConsultation::find();
 
         // add conditions that should always apply here
 
@@ -60,18 +60,18 @@ class SellingConsultationSearch extends SellingConsultation
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sc_user_id' => $this->sc_user_id,
-            'sc_date' => $this->sc_date,
-            'sc_type'=>$this->sc_type,
-            'sc_begin_time' => $this->sc_begin_time,
-            'sc_end_time' => $this->sc_end_time,
-            'sc_price' => $this->sc_price,
-            'sc_like' => $this->sc_like,
-            'sc_com_id' => $this->sc_com_id,
+            'pc_id' => $this->pc_id,
+            'pc_user_id' => $this->pc_user_id,
+            'pc_date' => $this->pc_date,
+            'pc_begin_time' => $this->pc_begin_time,
+            'pc_end_time' => $this->pc_end_time,
+            'pc_price' => $this->pc_price,
+            'pc_like' => $this->pc_like,
+            'pc_com_id' => $this->pc_com_id,
         ]);
 
-        $query->andFilterWhere(['ilike', 'sc_title', $this->sc_title])
-            ->andFilterWhere(['ilike', 'sc_description', $this->sc_description]);
+        $query->andFilterWhere(['ilike', 'pc_title', $this->pc_title])
+            ->andFilterWhere(['ilike', 'pc_description', $this->pc_description]);
 
         return $dataProvider;
     }

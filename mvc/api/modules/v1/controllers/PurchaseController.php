@@ -8,7 +8,8 @@
 
 namespace api\modules\v1\controllers;
 
-
+use Yii;
+use common\models\PurchaseConsultationSearch;
 use yii\rest\ActiveController;
 use yii\filters\ContentNegotiator;
 use sizeg\jwt\JwtHttpBearerAuth;
@@ -38,5 +39,22 @@ class PurchaseController extends ActiveController
         'collectionEnvelope'=>'items',
     ];
 
- public $modelClass ='common\models\PurchaseConsultation';
+    public $modelClass ='common\models\PurchaseConsultation';
+
+    public function actions() {
+
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+
+        return $actions;
+    }
+
+    public function prepareDataProvider() {
+
+        $searchModel = new PurchaseConsultationSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $dataProvider->query->Andwhere(['pc_type'=>1])->orderBy('pc_date')->all();
+    }
+
 }

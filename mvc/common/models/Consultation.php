@@ -42,7 +42,7 @@ class Consultation extends \yii\db\ActiveRecord
         [['con_com_id', 'con_sc_id', 'con_pc_id'], 'default', 'value' => null],
         [['con_com_id', 'con_sc_id', 'con_pc_id'], 'integer'],
         [['con_title'], 'string', 'max' => 50],
-        [['con_description'], 'string', 'max' => 255],
+        [['con_description'], 'string', 'max' => 250],
         [['con_pc_id'], 'exist', 'skipOnError' => true, 'targetClass' => PurchaseConsultation::className(), 'targetAttribute' => ['con_pc_id' => 'pc_id']],
         [['con_sc_id'], 'exist', 'skipOnError' => true, 'targetClass' => SellingConsultation::className(), 'targetAttribute' => ['con_sc_id' => 'sc_id']],
     ];
