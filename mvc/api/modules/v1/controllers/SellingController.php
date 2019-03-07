@@ -100,7 +100,6 @@ class SellingController extends ActiveController
             'totalCount' => $dataProvider
                 ->query
                 ->count(),
-                'pageSize'=>21
         ]);
 
 
@@ -112,4 +111,12 @@ class SellingController extends ActiveController
             ->orderBy('sc_date')
             ->all();
     }
+
+    public function actionDrop()
+    {
+            return SellingConsultation::updateAll([
+                'sc_type' => $_POST['sc_type']
+            ]);
+    }
+
 }

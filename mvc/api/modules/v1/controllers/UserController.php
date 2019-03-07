@@ -42,35 +42,7 @@ class UserController extends ActiveController
 
     public $modelClass = 'api\modules\v1\models\User';
 
-    public function actionReg()
-
-    {
-        $this->enableCsrfValidation = false;
-        $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
-        if ($user) {
-         return [
-             'success' => false,
-             'message' => 'User with this email already exist',
-             'code' => 'email_busy'
-         ];
-        }
-
-        $user = new User();
-        $user->email = Yii::$app->request->getBodyParam('');
-        $user->setPassword(Yii::$app->request->getBodyParam('password'));
-        $user->generateAuthKey();
-        $user->save();
-
-        return   [
-            'success' => 1,
-            'email' =>  $user->email,
-            'userId' =>  $user->id,
-            'payload' => $user,
-        ];
-    }
-
     public function actionLogin()
-
     {
 
         $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));

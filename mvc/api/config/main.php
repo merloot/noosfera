@@ -56,13 +56,15 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'v1/user/<action:user|login>'=>'v1/user/<action>',
+                'v1/competence/<action:competence|kill>'=>'v1/competence/<action>',
+                'v1/selling/<action:selling|drop>'=>'v1/selling/<action>',
+
                 //Альтернатива работы авторизации
 //                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
 // Если брать строку с actions не работает вызов  action/login
 
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
-
                 ],
 
                 ['class'=>'yii\rest\UrlRule',

@@ -8,6 +8,7 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\CompetenceProfile;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\filters\ContentNegotiator;
 use yii\rest\ActiveController;
@@ -37,4 +38,17 @@ class CompetenceController extends ActiveController
     ];
 
     public $modelClass = 'common\models\CompetenceProfile';
+
+
+    public function actionKill()
+    {
+
+
+
+        return CompetenceProfile::deleteAll([
+           'cp_p_id'=>$_POST['cp_p_id'],
+           'cp_com_id'=>$_POST['cp_com_id'],
+        ]);
+
+    }
 }

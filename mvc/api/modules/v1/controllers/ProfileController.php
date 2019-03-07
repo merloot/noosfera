@@ -2,18 +2,13 @@
 
 namespace api\modules\v1\controllers;
 
+use yii\data\Pagination;
+use common\models\ProfileSearch;
 use yii;
-use yii\filters\Cors;
 use yii\web\Response;
-use common\models\User;
-use common\models\Profile;
-use yii\filters\AccessControl;
 use yii\rest\ActiveController;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\filters\ContentNegotiator;
-use yii\behaviors\BlameableBehavior;
-use yii\web\ServerErrorHttpException;
-use yii\filters\VerbFilter;
 
 class ProfileController extends ActiveController
 {
@@ -36,6 +31,7 @@ class ProfileController extends ActiveController
         'class'=>'yii\rest\Serializer',
         'collectionEnvelope'=>'items',
     ];
+
     public $modelClass = 'common\models\Profile';
 
 }

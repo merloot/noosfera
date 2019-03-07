@@ -113,6 +113,11 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
 
     }
 
+    public function findById()
+    {
+        return PurchaseConsultation::find(['pc_id' => $this->primaryKey])->one();
+
+    }
 
     public function fields()
     {
