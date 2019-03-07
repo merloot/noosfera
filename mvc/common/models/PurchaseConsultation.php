@@ -38,7 +38,9 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-//            [['pc_user_id', 'pc_title'], 'required'],
+            [['pc_title'],'trim'],
+            [['pc_title'], 'required'],
+            [['pc_com_id'],'required'],
             [['pc_user_id', 'pc_com_id'], 'default', 'value' => null],
             [['pc_user_id', 'pc_com_id'], 'integer'],
             [['pc_date', 'pc_begin_time', 'pc_end_time'], 'safe'],
@@ -73,12 +75,17 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
 
     public function getTagCon()
     {
-        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])->viaTable('TagsConsultation', ['tc_con_id' => 'pc_id']);
+
+        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])
+            ->viaTable('TagsConsultation', ['tc_con_id' => 'pc_id']);
+
     }
 
     public function getConsultations()
     {
+
         return $this->hasMany(Consultation::className(), ['con_pc_id' => 'pc_id']);
+
     }
 
     /**
@@ -86,7 +93,17 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
      */
     public function getPcUser()
     {
+
         return $this->hasOne(Profile::className(), ['p_user_id' => 'pc_user_id']);
+
+    }
+
+
+    public function getCountPc()
+    {
+
+        return PurchaseConsultation::find()->where(['pc_type'=>1])->count('pc_id');
+
     }
 
     public function getPcCom()
@@ -101,13 +118,21 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     {
 
         return ArrayHelper::merge(parent::fields(),[
-            'pcCom','pcUser','tagCon'
+            'pcCom',
+            'pcUser',
+            'tagCon',
+            'countPc'
         ]);
     }
 
     public function extraFields()
     {
-        return ['pcCom','pcUser','tagCon'];
+        return [
+            'pcCom',
+            'pcUser',
+            'tagCon',
+            'countPc'
+        ];
     }
 
 }

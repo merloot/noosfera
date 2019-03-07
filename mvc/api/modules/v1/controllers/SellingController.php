@@ -17,6 +17,7 @@ use yii\data\ActiveDataProvider;
 use yii\filters\ContentNegotiator;
 use yii\rest\ActiveController;
 use yii\web\Response;
+use yii\data\Pagination;
 
 class SellingController extends ActiveController
 {
@@ -72,12 +73,14 @@ class SellingController extends ActiveController
 //            ];
         return $behaviors;
     }
+
+
+    public $modelClass = 'common\models\SellingConsultation';
+
     public $serializer = [
         'class'=>'yii\rest\Serializer',
         'collectionEnvelope'=>'items',
     ];
-
-    public $modelClass = 'common\models\SellingConsultation';
 
     public function actions() {
 
@@ -90,8 +93,23 @@ class SellingController extends ActiveController
     public function prepareDataProvider() {
 
         $searchModel = new SellingConsultationSearch();
+
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $dataProvider->query->Andwhere(['sc_type'=>1])->orderBy('sc_date')->all();
+        $pages = new Pagination([
+            'totalCount' => $dataProvider
+                ->query
+                ->count(),
+                'pageSize'=>21
+        ]);
+
+
+        return $dataProvider
+            ->query
+            ->offset($pages->offset)
+            ->limit($pages->limit)
+            ->Andwhere(['sc_type'=>1])
+            ->orderBy('sc_date')
+            ->all();
     }
 }

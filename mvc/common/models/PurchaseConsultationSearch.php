@@ -48,6 +48,9 @@ class PurchaseConsultationSearch extends PurchaseConsultation
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination'=>[
+                'pageSize'=>21,
+            ]
         ]);
 
         $this->load($params);

@@ -43,11 +43,13 @@ class SellingConsultationSearch extends SellingConsultation
     public function search($params)
     {
         $query = SellingConsultation::find();
-
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination'=>[
+                'pageSize'=>21,
+            ]
         ]);
 
         $this->load($params);

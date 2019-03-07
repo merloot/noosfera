@@ -14,6 +14,7 @@ use yii\rest\ActiveController;
 use yii\filters\ContentNegotiator;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\web\Response;
+use yii\data\Pagination;
 
 class PurchaseController extends ActiveController
 {
@@ -53,8 +54,21 @@ class PurchaseController extends ActiveController
 
         $searchModel = new PurchaseConsultationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $pages = new Pagination([
+            'totalCount' => $dataProvider
+                ->query
+                ->count(),
+                'pageSize'=>21
+        ]);
 
-        return $dataProvider->query->Andwhere(['pc_type'=>1])->orderBy('pc_date')->all();
+
+        return $dataProvider
+            ->query
+            ->offset($pages->offset)
+            ->limit($pages->limit)
+            ->Andwhere(['pc_type'=>1])
+            ->orderBy('pc_date')
+            ->all();
     }
 
 }

@@ -39,8 +39,11 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-//            [['sc_user_id', 'sc_title'], 'required'],
-            [['sc_user_id', 'sc_com_id','sc_type'], 'default', 'value' => null],
+            [['sc_title'],'trim'],
+            [['sc_title'], 'required'],
+            [['sc_com_id'],'required'],
+            [['sc_type'], 'default', 'value' => 1],
+            [['sc_user_id', 'sc_com_id'], 'default', 'value' => null],
             [['sc_user_id', 'sc_com_id','sc_type'], 'integer'],
             [['sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],
             [['sc_price'], 'number'],
@@ -77,26 +80,41 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     public function getScCom()
     {
+
         return $this->hasOne(Competence::className(), ['com_id' => 'sc_com_id']);
+
     }
 
 
     public function getConsultations()
     {
+
         return $this->hasMany(Consultation::className(), ['con_sc_id' => 'sc_id']);
+
     }
 
+    public function getCountSc()
+    {
+
+        return SellingConsultation::find()->where(['sc_type'=>1])->count('sc_id');
+
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getScUser()
     {
+
         return $this->hasOne(Profile::className(), ['p_user_id' => 'sc_user_id']);
+
     }
 
     public function getTagCon()
     {
-        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])->viaTable('TagsConsultation', ['tc_con_id' => 'sc_id']);
+
+        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])
+            ->viaTable('TagsConsultation', ['tc_con_id' => 'sc_id']);
+
     }
 
 //    public function beforeValidate()
@@ -115,7 +133,10 @@ class SellingConsultation extends \yii\db\ActiveRecord
     {
 
         return ArrayHelper::merge(parent::fields(),[
-            'scCom','scUser','tagCon'
+            'scCom',
+            'scUser',
+            'tagCon',
+            'countSc'
         ]);
     }
 
@@ -123,12 +144,18 @@ class SellingConsultation extends \yii\db\ActiveRecord
     {
 
         return $this->hasMany(CompetenceProfile::className(),['cp_p_id'=> 'sc_user_id']);
+
     }
 
     public function extraFields()
     {
 
-        return ['scUser','scCom','tagCon'];
+        return [
+            'scUser',
+            'scCom',
+            'tagCon',
+            'countSc'
+        ];
 
     }
 
