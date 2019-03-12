@@ -69,28 +69,40 @@ class Profile extends \yii\db\ActiveRecord
 
     public function getCompetenceProfile()
     {
-        return $this->hasMany(CompetenceProfile::className(), ['cp_p_id' => 'p_user_id']);
+        return $this->hasMany(CompetenceProfile::className(), [
+            'cp_p_id' => 'p_user_id'
+        ]);
     }
 
     public function getCpCom()
     {
-        return $this->hasMany(Competence::className(), ['com_id' => 'cp_com_id'])->viaTable('CompetenceProfile', ['cp_p_id' => 'p_user_id']);
+        return $this->hasMany(Competence::className(), [
+            'com_id' => 'cp_com_id'])
+            ->viaTable('CompetenceProfile', [
+                'cp_p_id' => 'p_user_id'
+            ]);
     }
 
     public function getPUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'p_user_id']);
+        return $this->hasOne(User::className(), [
+            'id' => 'p_user_id'
+        ]);
 
     }
 
     public function getConPUser()
     {
-        return $this->hasMany(PurchaseConsultation::className(),['pc_user_id'=>'p_user_id']);
+        return $this->hasMany(PurchaseConsultation::className(),[
+            'pc_user_id'=>'p_user_id'
+        ]);
     }
 
     public function getConSUser()
     {
-        return $this->hasMany(SellingConsultation::className(),['sc_user_id'=>'p_user_id']);
+        return $this->hasMany(SellingConsultation::className(),[
+            'sc_user_id'=>'p_user_id'
+        ]);
     }
 
 

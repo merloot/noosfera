@@ -55,17 +55,23 @@ class TagsConsultation extends \yii\db\ActiveRecord
      */
     public function getScCon()
     {
-        return $this->hasOne(SellingConsultation::className(),['sc_con_id'=>'tc_con_id']);
+        return $this->hasOne(SellingConsultation::className(),[
+            'sc_con_id'=>'tc_con_id'
+        ]);
     }
 
     public function getPcCon()
     {
-        return $this->hasOne(PurchaseConsultation::className(),['pc_con_id'=>'tc_con_id']);
+        return $this->hasOne(PurchaseConsultation::className(),[
+            'pc_con_id'=>'tc_con_id'
+        ]);
     }
 
     public function getTcCon()
     {
-        return $this->hasOne(Consultation::className(), ['con_id' => 'tc_con_id']);
+        return $this->hasOne(Consultation::className(), [
+            'con_id' => 'tc_con_id'
+        ]);
     }
 
     /**
@@ -73,7 +79,9 @@ class TagsConsultation extends \yii\db\ActiveRecord
      */
     public function getTcTag()
     {
-        return $this->hasOne(Tags::className(), ['tag_id' => 'tc_tag_id']);
+        return $this->hasOne(Tags::className(), [
+            'tag_id' => 'tc_tag_id'
+        ]);
     }
 
     public function extraFields()

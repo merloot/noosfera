@@ -56,7 +56,9 @@ class CompetenceProfile extends \yii\db\ActiveRecord
      */
     public function getCpCom()
     {
-        return $this->hasOne(Competence::className(), ['com_id' => 'cp_com_id']);
+        return $this->hasOne(Competence::className(), [
+            'com_id' => 'cp_com_id'
+        ]);
     }
 
     /**
@@ -64,7 +66,9 @@ class CompetenceProfile extends \yii\db\ActiveRecord
      */
     public function getCpP()
     {
-        return $this->hasOne(Profile::className(), ['p_user_id' => 'cp_p_id']);
+        return $this->hasOne(Profile::className(), [
+            'p_user_id' => 'cp_p_id'
+        ]);
     }
 
 

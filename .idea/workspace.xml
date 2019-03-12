@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="247a5908-d0a5-4a3b-bd25-830b2a50352e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/mvc/api/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/CompetenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/CompetenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/Consultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Consultation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/common/models/SellingConsultationSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/SellingConsultationSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,65 +108,7 @@
     </PATH>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/SellingConsultation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="114" selection-start-line="114" selection-end-line="119" selection-end-column="5" />
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
-              <folding>
-                <element signature="e#127#157#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mvc/api/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="47" column="77" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="77" />
-              <folding>
-                <element signature="e#47#77#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -233,7 +175,6 @@
         <option value="$PROJECT_DIR$/mvc/common/models/ProfileSearch.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/models/User.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/Tag_conController.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/web/User.php" />
         <option value="$PROJECT_DIR$/mvc/vendor/sizeg/yii2-jwt/JwtHttpBearerAuth.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ComController.php" />
@@ -245,23 +186,24 @@
         <option value="$PROJECT_DIR$/public_html/api/.htaccess" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ConsultationController.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/TagController.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/Tags.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/Consultation.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190306_034827_add_column_type.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190306_070830_add_colunm_purchase.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/User.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultationSearch.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/PurchaseController.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/Profile.php" />
-        <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultationSearch.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/CompetenceController.php" />
-        <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" />
         <option value="$PROJECT_DIR$/mvc/api/config/main.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" />
+        <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/Consultation.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/Profile.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/Tags.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/User.php" />
       </list>
     </option>
   </component>
@@ -454,7 +396,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../board" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -694,12 +636,12 @@
       <workItem from="1550804470681" duration="29042000" />
       <workItem from="1551082187780" duration="7494000" />
       <workItem from="1551239776037" duration="40704000" />
-      <workItem from="1551412836181" duration="75782000" />
+      <workItem from="1551412836181" duration="81975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348520000" />
+    <option name="totallyTimeSpent" value="354713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,8 +653,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="29" width="1924" height="1029" extended-state="7" />
-    <editor active="true" />
+    <frame x="-2" y="29" width="1924" height="1029" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21237993" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -750,13 +691,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/web/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="296" column="38" selection-start-line="296" selection-start-column="38" selection-end-line="296" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/vendor/sizeg/yii2-jwt/JwtHttpBearerAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -775,13 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/Tag_conController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -834,23 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ComController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" selection-start-line="27" selection-start-column="2" selection-end-line="30" selection-end-column="12" />
-          <folding>
-            <element signature="e#127#159#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/CompetenceProfileSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/ProfileSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
@@ -885,13 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/TagsConsultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/rest/ActiveController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -917,53 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="26" column="57" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ConsultationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#128#158#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
-          <folding>
-            <element signature="e#33#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/TagController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding>
-            <element signature="e#127#148#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Competence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1001,47 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/PurchaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-          <folding>
-            <element signature="e#127#135#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="40" />
-          <folding>
-            <element signature="e#31#39#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-          <folding>
-            <element signature="e#46#70#0#PHP" expanded="true" />
-            <marker date="1551943276087" expanded="true" signature="287:715" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/json/json.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1376">
@@ -1056,13 +871,6 @@
           <folding>
             <element signature="e#33#52#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -1083,60 +891,193 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ComController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" selection-start-line="27" selection-start-column="2" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="e#127#159#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="47" column="77" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="77" />
+        <state relative-caret-position="134">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
           <folding>
             <element signature="e#47#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/SellingConsultation.php">
+    <entry file="file://$PROJECT_DIR$/mvc/api/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
-          <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="59" column="74" selection-start-line="59" selection-start-column="74" selection-end-line="59" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/CompetenceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        <state relative-caret-position="660">
+          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
           <folding>
             <element signature="e#127#163#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php">
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ConsultationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="114" selection-start-line="114" selection-end-line="119" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
+            <element signature="e#128#158#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding>
+            <element signature="e#46#70#0#PHP" expanded="true" />
+            <marker date="1551943276087" expanded="true" signature="287:715" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/PurchaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding>
+            <element signature="e#127#135#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+        <state relative-caret-position="449">
+          <caret line="96" column="36" lean-forward="true" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
           <folding>
             <element signature="e#127#157#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/config/main.php">
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/Tag_conController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+        <state relative-caret-position="120">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/TagController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <folding>
+            <element signature="e#127#148#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/Competence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/CompetenceProfileSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/LoginForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+          <folding>
+            <element signature="e#33#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1339">
+          <caret line="183" column="5" lean-forward="true" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/TagsConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1129">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/Tags.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="e#33#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/SellingConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="179" column="8" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
+          <folding>
+            <element signature="e#33#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+          <folding>
+            <element signature="e#33#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="130" column="12" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="12" />
+          <folding>
+            <element signature="e#33#41#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -81,7 +81,9 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function getScCom()
     {
 
-        return $this->hasOne(Competence::className(), ['com_id' => 'sc_com_id']);
+        return $this->hasOne(Competence::className(), [
+            'com_id' => 'sc_com_id'
+        ]);
 
     }
 
@@ -89,14 +91,20 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function getConsultations()
     {
 
-        return $this->hasMany(Consultation::className(), ['con_sc_id' => 'sc_id']);
+        return $this->hasMany(Consultation::className(), [
+            'con_sc_id' => 'sc_id'
+        ]);
 
     }
 
     public function getCountSc()
     {
 
-        return SellingConsultation::find()->where(['sc_type'=>1])->count('sc_id');
+        return SellingConsultation::find()
+            ->where([
+                'sc_type'=>1])
+            ->count('sc_id'
+            );
 
     }
     /**
@@ -105,15 +113,20 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function getScUser()
     {
 
-        return $this->hasOne(Profile::className(), ['p_user_id' => 'sc_user_id']);
+        return $this->hasOne(Profile::className(), [
+            'p_user_id' => 'sc_user_id'
+        ]);
 
     }
 
     public function getTagCon()
     {
 
-        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])
-            ->viaTable('TagsConsultation', ['tc_con_id' => 'sc_id']);
+        return $this->hasMany(Tags::className(),[
+            'tag_id'=>'tc_tag_id'])
+            ->viaTable('TagsConsultation', [
+                'tc_con_id' => 'sc_id'
+            ]);
 
     }
 
@@ -142,7 +155,9 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     public function findById()
     {
-        return SellingConsultation::find(['sc_id' => $this->primaryKey])->one();
+        return SellingConsultation::find([
+            'sc_id' => $this->primaryKey])
+            ->one();
 
     }
 
@@ -160,7 +175,9 @@ class SellingConsultation extends \yii\db\ActiveRecord
     public function getComSel()
     {
 
-        return $this->hasMany(CompetenceProfile::className(),['cp_p_id'=> 'sc_user_id']);
+        return $this->hasMany(CompetenceProfile::className(),[
+            'cp_p_id'=> 'sc_user_id'
+        ]);
 
     }
 

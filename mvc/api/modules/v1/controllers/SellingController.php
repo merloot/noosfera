@@ -115,7 +115,7 @@ class SellingController extends ActiveController
     public function actionDrop()
     {
             return SellingConsultation::updateAll([
-                'sc_type' => $_POST['sc_type']
+                'sc_type' => '2',
             ]);
     }
 

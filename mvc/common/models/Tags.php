@@ -51,7 +51,9 @@ class Tags extends \yii\db\ActiveRecord
      */
     public function getTagsConsultations()
     {
-        return $this->hasMany(TagsConsultation::className(), ['tc_tag_id' => 'tag_id']);
+        return $this->hasMany(TagsConsultation::className(), [
+            'tc_tag_id' => 'tag_id'
+        ]);
     }
 
     public function beforeSave($insert)

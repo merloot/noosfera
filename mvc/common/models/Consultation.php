@@ -71,7 +71,9 @@ class Consultation extends \yii\db\ActiveRecord
      */
     public function getConPc()
     {
-        return $this->hasOne(PurchaseConsultation::className(), ['pc_id' => 'con_pc_id']);
+        return $this->hasOne(PurchaseConsultation::className(), [
+            'pc_id' => 'con_pc_id'
+        ]);
     }
 
 
@@ -81,14 +83,18 @@ class Consultation extends \yii\db\ActiveRecord
 
     public function getConSc()
     {
-        return $this->hasOne(SellingConsultation::className(), ['sc_id' => 'con_sc_id']);
+        return $this->hasOne(SellingConsultation::className(), [
+            'sc_id' => 'con_sc_id'
+        ]);
     }
 
         public function getTagsConsultations()
 
         {
 
-        return $this->hasMany(TagsConsultation::className(), ['tc_con_id' => 'con_id']);
+        return $this->hasMany(TagsConsultation::className(), [
+            'tc_con_id' => 'con_id'
+        ]);
 
         }
     public function beforeSave($insert)

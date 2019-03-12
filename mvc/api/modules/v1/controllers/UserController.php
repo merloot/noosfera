@@ -45,7 +45,10 @@ class UserController extends ActiveController
     public function actionLogin()
     {
 
-        $user = User::findByEmail(Yii::$app->request->getBodyParam('email'));
+        $user = User::findByEmail(Yii::$app
+            ->request
+            ->getBodyParam('email')
+        );
         if (!$user)
         {
             return [
@@ -56,7 +59,9 @@ class UserController extends ActiveController
         }
 
         if($user)
-            if (!$user->validatePassword(Yii::$app->request->getBodyParam('password'))) {
+            if (!$user->validatePassword(Yii::$app
+                ->request
+                ->getBodyParam('password'))) {
                 return  [
                     'success' => false,
                     'message' => 'Incorrect password'
@@ -74,7 +79,10 @@ class UserController extends ActiveController
                     'data'=> (string) ($token),
                     'id'=> $user->getPrimaryKey(),
 //                    'p_id'=> $user->profile->p_user_id,
-                    'p_id'=>Profile::find()->select('p_id')->where(['p_user_id'=>$user->getPrimaryKey()])->one(),
+                    'p_id'=>Profile::find()
+                        ->select('p_id')
+                        ->where(['p_user_id'=>$user->getPrimaryKey()])
+                        ->one(),
                 ];
 
 

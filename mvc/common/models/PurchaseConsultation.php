@@ -76,15 +76,20 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     public function getTagCon()
     {
 
-        return $this->hasMany(Tags::className(),['tag_id'=>'tc_tag_id'])
-            ->viaTable('TagsConsultation', ['tc_con_id' => 'pc_id']);
+        return $this->hasMany(Tags::className(),[
+            'tag_id'=>'tc_tag_id'])
+            ->viaTable('TagsConsultation', [
+                'tc_con_id' => 'pc_id'
+            ]);
 
     }
 
     public function getConsultations()
     {
 
-        return $this->hasMany(Consultation::className(), ['con_pc_id' => 'pc_id']);
+        return $this->hasMany(Consultation::className(), [
+            'con_pc_id' => 'pc_id'
+        ]);
 
     }
 
@@ -94,7 +99,9 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     public function getPcUser()
     {
 
-        return $this->hasOne(Profile::className(), ['p_user_id' => 'pc_user_id']);
+        return $this->hasOne(Profile::className(), [
+            'p_user_id' => 'pc_user_id'
+        ]);
 
     }
 
@@ -102,20 +109,26 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
     public function getCountPc()
     {
 
-        return PurchaseConsultation::find()->where(['pc_type'=>1])->count('pc_id');
+        return PurchaseConsultation::find()
+            ->where(['pc_type'=>1])
+            ->count('pc_id');
 
     }
 
     public function getPcCom()
     {
 
-        return $this->hasOne(Competence::className(), ['com_id'=>'pc_com_id']);
+        return $this->hasOne(Competence::className(), [
+            'com_id'=>'pc_com_id'
+        ]);
 
     }
 
     public function findById()
     {
-        return PurchaseConsultation::find(['pc_id' => $this->primaryKey])->one();
+        return PurchaseConsultation::find([
+            'pc_id' => $this->primaryKey])
+            ->one();
 
     }
 
