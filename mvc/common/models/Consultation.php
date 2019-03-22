@@ -4,18 +4,22 @@ namespace common\models;
 
 use http\Params;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "ConsultationController".
  *
  * @property int $con_id
- * @property int $con_pc_user_id
- * @property int $con_sc_user_id
+ * @property int $con_pc_id
+ * @property int $con_sc_id
  * @property bool $con_like
  * @property string $con_date
  * @property string $con_begin_time
  * @property string $con_end_time
  * @property string $con_price
+ * @property string $con_com_id
+ * @property string $con_title
+ * @property string $con_description
  *
  * @property PurchaseConsultation[] $purchaseConsultations
  * @property SellingConsultation[] $sellingConsultations
@@ -56,8 +60,8 @@ class Consultation extends \yii\db\ActiveRecord
     {
         return [
             'con_id' => 'Con ID',
-            'con_pc_user_id' => 'Con Pc User ID',
-            'con_sc_user_id' => 'Con Sc User ID',
+            'con_pc_id' => 'Con Pc ID',
+            'con_sc_id' => 'Con Sc ID',
             'con_like' => 'Con Like',
             'con_date' => 'Con Date',
             'con_begin_time' => 'Con Begin Time',
@@ -88,15 +92,35 @@ class Consultation extends \yii\db\ActiveRecord
         ]);
     }
 
-        public function getTagsConsultations()
-
-        {
+    public function getTagsConsultations()
+    {
 
         return $this->hasMany(TagsConsultation::className(), [
             'tc_con_id' => 'con_id'
         ]);
 
-        }
+    }
+
+    public function fields()
+    {
+
+        return ArrayHelper::merge(parent::fields(),[
+            'conSc',
+            'conPc',
+            'tagsConsultations'
+        ]);
+    }
+
+    public function extraFields()
+    {
+        return [
+            'conSc',
+            'conPc',
+            'tagsConsultations'
+        ];
+    }
+
+
     public function beforeSave($insert)
     {
         if ($insert)
@@ -113,5 +137,6 @@ class Consultation extends \yii\db\ActiveRecord
         }
     }
  }
+
 
 

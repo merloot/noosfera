@@ -124,6 +124,19 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
 
     }
 
+    public function run()
+    {
+        $response = Consultation::findOne(['con_pc_id'=>$this->pc_id]);
+        if (empty($response) || is_null($response)) {
+            return ('Not Found');
+        }
+        $response->setAttribute('','');
+        $response->setAttribute('sc_type', $this->sc_type);
+        if ($response->save()) {
+            return true;
+        }
+        return ('Hyi');
+    }
     public function findById()
     {
         return PurchaseConsultation::find([
