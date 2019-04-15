@@ -1,13 +1,15 @@
 <?php
 
-namespace common\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use common\models\User;
+
 /**
- * SellingConsultationSearch represents the model behind the search form of `common\models\SellingConsultation`.
+ * UserSearch represents the model behind the search form of `common\models\User`.
  */
-class SellingConsultationSearch extends SellingConsultation
+class UserSearch extends User
 {
     /**
      * {@inheritdoc}
@@ -15,10 +17,8 @@ class SellingConsultationSearch extends SellingConsultation
     public function rules()
     {
         return [
-            [['sc_id', 'sc_user_id', 'sc_com_id'], 'integer'],
-            [['sc_title', 'sc_description', 'sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],
-            [['sc_price'], 'number'],
-            [['sc_like'], 'boolean'],
+            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['auth_key', 'password_hash', 'password_reset_token', 'email'], 'safe'],
         ];
     }
 
@@ -40,7 +40,8 @@ class SellingConsultationSearch extends SellingConsultation
      */
     public function search($params)
     {
-        $query = SellingConsultation::find();
+        $query = User::find();
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -57,19 +58,16 @@ class SellingConsultationSearch extends SellingConsultation
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sc_id'=>$this->sc_id,
-            'sc_user_id' => $this->sc_user_id,
-            'sc_date' => $this->sc_date,
-            'sc_type'=>$this->sc_type,
-            'sc_begin_time' => $this->sc_begin_time,
-            'sc_end_time' => $this->sc_end_time,
-            'sc_price' => $this->sc_price,
-            'sc_like' => $this->sc_like,
-            'sc_com_id' => $this->sc_com_id,
+            'id' => $this->id,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['ilike', 'sc_title', $this->sc_title])
-            ->andFilterWhere(['ilike', 'sc_description', $this->sc_description]);
+        $query->andFilterWhere(['ilike', 'auth_key', $this->auth_key])
+            ->andFilterWhere(['ilike', 'password_hash', $this->password_hash])
+            ->andFilterWhere(['ilike', 'password_reset_token', $this->password_reset_token])
+            ->andFilterWhere(['ilike', 'email', $this->email]);
 
         return $dataProvider;
     }

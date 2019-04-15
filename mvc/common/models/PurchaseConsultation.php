@@ -42,7 +42,7 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
             [['pc_title'], 'required'],
             [['pc_com_id'],'required'],
             [['pc_user_id', 'pc_com_id'], 'default', 'value' => null],
-            [['pc_user_id', 'pc_com_id'], 'integer'],
+            [['pc_user_id', 'pc_com_id','pc_type'], 'integer'],
             [['pc_date', 'pc_begin_time', 'pc_end_time'], 'safe'],
 
             [['pc_price'], 'number'],
@@ -79,7 +79,7 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
         return $this->hasMany(Tags::className(),[
             'tag_id'=>'tc_tag_id'])
             ->viaTable('TagsConsultation', [
-                'tc_con_id' => 'pc_id'
+                'tc_pc_id' => 'pc_id'
             ]);
 
     }
@@ -124,19 +124,6 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
 
     }
 
-    public function run()
-    {
-        $response = Consultation::findOne(['con_pc_id'=>$this->pc_id]);
-        if (empty($response) || is_null($response)) {
-            return ('Not Found');
-        }
-        $response->setAttribute('','');
-        $response->setAttribute('sc_type', $this->sc_type);
-        if ($response->save()) {
-            return true;
-        }
-        return ('Hyi');
-    }
     public function findById()
     {
         return PurchaseConsultation::find([

@@ -36,10 +36,9 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label'=>'CompetencePController','url'=>['competence/index']],
+        ['label'=>'Competence Profile','url'=>['/competence-profile/index']],
         ['label'=>'Profile', 'url'=> ['profile/index']],
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label'=>'Competence_profile','url'=>['/competence_profile/index']],
+        ['label'=>'Competence','url'=>['competence/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

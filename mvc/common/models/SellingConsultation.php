@@ -120,13 +120,13 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     }
 
-    public function getTagCon()
+    public function getTagConsultation()
     {
 
         return $this->hasMany(Tags::className(),[
             'tag_id'=>'tc_tag_id'])
             ->viaTable('TagsConsultation', [
-                'tc_con_id' => 'sc_id'
+                'tc_sc_id' => 'sc_id'
             ]);
 
     }
@@ -158,7 +158,7 @@ class SellingConsultation extends \yii\db\ActiveRecord
         return ArrayHelper::merge(parent::fields(),[
             'scCom',
             'scUser',
-            'tagCon',
+            'tagConsultation',
             'countSc'
         ]);
     }
@@ -178,7 +178,7 @@ class SellingConsultation extends \yii\db\ActiveRecord
         return [
             'scUser',
             'scCom',
-            'tagCon',
+            'tagConsultation',
             'countSc'
         ];
 

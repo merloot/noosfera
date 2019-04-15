@@ -4,10 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use common\models\Competence;
+
 /**
- * SellingConsultationSearch represents the model behind the search form of `common\models\SellingConsultation`.
+ * CompetenceSearch represents the model behind the search form of `common\models\Competence`.
  */
-class SellingConsultationSearch extends SellingConsultation
+class CompetenceSearch extends Competence
 {
     /**
      * {@inheritdoc}
@@ -15,10 +17,8 @@ class SellingConsultationSearch extends SellingConsultation
     public function rules()
     {
         return [
-            [['sc_id', 'sc_user_id', 'sc_com_id'], 'integer'],
-            [['sc_title', 'sc_description', 'sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],
-            [['sc_price'], 'number'],
-            [['sc_like'], 'boolean'],
+            [['com_id'], 'integer'],
+            [['competence'], 'safe'],
         ];
     }
 
@@ -40,7 +40,8 @@ class SellingConsultationSearch extends SellingConsultation
      */
     public function search($params)
     {
-        $query = SellingConsultation::find();
+        $query = Competence::find();
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -57,19 +58,10 @@ class SellingConsultationSearch extends SellingConsultation
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sc_id'=>$this->sc_id,
-            'sc_user_id' => $this->sc_user_id,
-            'sc_date' => $this->sc_date,
-            'sc_type'=>$this->sc_type,
-            'sc_begin_time' => $this->sc_begin_time,
-            'sc_end_time' => $this->sc_end_time,
-            'sc_price' => $this->sc_price,
-            'sc_like' => $this->sc_like,
-            'sc_com_id' => $this->sc_com_id,
+            'com_id' => $this->com_id,
         ]);
 
-        $query->andFilterWhere(['ilike', 'sc_title', $this->sc_title])
-            ->andFilterWhere(['ilike', 'sc_description', $this->sc_description]);
+        $query->andFilterWhere(['ilike', 'competence', $this->competence]);
 
         return $dataProvider;
     }

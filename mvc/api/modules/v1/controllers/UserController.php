@@ -79,6 +79,10 @@ class UserController extends ActiveController
                     'data'=> (string) ($token),
                     'id'=> $user->getPrimaryKey(),
 //                    'p_id'=> $user->profile->p_user_id,
+                    'status'=>User::find()
+                    ->select('status')
+                    ->andWhere(['id'=>$user->getPrimaryKey()])
+                    ->one(),
                     'p_id'=>Profile::find()
                         ->select('p_id')
                         ->where(['p_user_id'=>$user->getPrimaryKey()])

@@ -2,20 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: user14
- * Date: 22.02.19
- * Time: 17:02
+ * Date: 02.04.19
+ * Time: 10:05
  */
 
 namespace api\modules\v1\controllers;
 
-
-use common\models\TagconSearch;
-use yii\data\Pagination;
+use common\models\NotificationSearch;
+use yii\web\Response;
 use yii\filters\ContentNegotiator;
 use yii\rest\ActiveController;
-use yii\web\Response;
+use Yii;
+use yii\data\Pagination;
 
-class Tag_conController extends ActiveController
+class NotificationController extends ActiveController
 {
     public function behaviors()
     {
@@ -26,44 +26,45 @@ class Tag_conController extends ActiveController
                 'application/json' => Response::FORMAT_JSON,
             ]
         ];
-//
-//        $behaviors ['cors']=[
-//            'class'=> Cors::class,
-//            'Origin' => ['*'],
-//            'Access-Control-Request-Method' => ['GET', 'HEAD', 'OPTIONS','POST'],
-//        ];
+
 //        $behaviors['authenticator'] = [
 //            'class' => JwtHttpBearerAuth::class,
-//            ];
+//        ];
 
         return $behaviors;
     }
-
     public $serializer = [
         'class'=>'yii\rest\Serializer',
         'collectionEnvelope'=>'items',
     ];
 
+    public $modelClass = 'common\models\Notifications';
 
-    public $modelClass = 'common\models\TagsConsultation';
+    public function actions() {
+
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+
+        return $actions;
+    }
 
     public function prepareDataProvider() {
 
-        $searchModel = new TagconSearch();
+        $searchModel = new NotificationSearch();
 
-        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         $pages = new Pagination([
             'totalCount' => $dataProvider
                 ->query
                 ->count(),
-            'pageSize'=>21
         ]);
 
 
         return $dataProvider
             ->query
             ->offset($pages->offset)
+            ->Andwhere(['n_status'=>1])
             ->limit($pages->limit)
             ->all();
     }

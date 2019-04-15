@@ -17,7 +17,7 @@ class Competence extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'CompetencePController';
+        return 'Competence';
     }
 
     /**

@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\CompetenceProfileSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'CompetencePController Profiles';
+$this->title = 'Competence Profiles';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="competence-profile-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create CompetencePController Profile', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Competence Profile', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

@@ -2,7 +2,6 @@
 
 namespace common\models;
 
-use http\Params;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -12,7 +11,6 @@ use yii\helpers\ArrayHelper;
  * @property int $con_id
  * @property int $con_pc_id
  * @property int $con_sc_id
- * @property bool $con_like
  * @property string $con_date
  * @property string $con_begin_time
  * @property string $con_end_time
@@ -40,11 +38,10 @@ class Consultation extends \yii\db\ActiveRecord
     public function rules()
 {
     return [
-        [['con_like'], 'boolean'],
         [['con_date', 'con_begin_time', 'con_end_time'], 'safe'],
         [['con_price'], 'number'],
-        [['con_com_id', 'con_sc_id', 'con_pc_id'], 'default', 'value' => null],
-        [['con_com_id', 'con_sc_id', 'con_pc_id'], 'integer'],
+        [['con_com_id', 'con_sc_id', 'con_pc_id','con_type'], 'default', 'value' => null],
+        [['con_com_id', 'con_sc_id', 'con_pc_id','con_type'], 'integer'],
         [['con_title'], 'string', 'max' => 50],
         [['con_description'], 'string', 'max' => 250],
         [['con_pc_id'], 'exist', 'skipOnError' => true, 'targetClass' => PurchaseConsultation::className(), 'targetAttribute' => ['con_pc_id' => 'pc_id']],
@@ -62,7 +59,6 @@ class Consultation extends \yii\db\ActiveRecord
             'con_id' => 'Con ID',
             'con_pc_id' => 'Con Pc ID',
             'con_sc_id' => 'Con Sc ID',
-            'con_like' => 'Con Like',
             'con_date' => 'Con Date',
             'con_begin_time' => 'Con Begin Time',
             'con_end_time' => 'Con End Time',
@@ -73,6 +69,7 @@ class Consultation extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
     public function getConPc()
     {
         return $this->hasOne(PurchaseConsultation::className(), [
@@ -92,13 +89,11 @@ class Consultation extends \yii\db\ActiveRecord
         ]);
     }
 
-    public function getTagsConsultations()
+    public function getArc()
     {
-
-        return $this->hasMany(TagsConsultation::className(), [
-            'tc_con_id' => 'con_id'
+        return $this->hasMany(Archive::className(),[
+           'a_con_id'=>'con_id'
         ]);
-
     }
 
     public function fields()
@@ -107,8 +102,15 @@ class Consultation extends \yii\db\ActiveRecord
         return ArrayHelper::merge(parent::fields(),[
             'conSc',
             'conPc',
-            'tagsConsultations'
         ]);
+    }
+
+    public function findById()
+    {
+        return Consultation::find([
+            'con_id' => $this->primaryKey])
+            ->one();
+
     }
 
     public function extraFields()
@@ -116,7 +118,8 @@ class Consultation extends \yii\db\ActiveRecord
         return [
             'conSc',
             'conPc',
-            'tagsConsultations'
+            'tagsConsultations',
+            'arc'
         ];
     }
 
@@ -126,7 +129,6 @@ class Consultation extends \yii\db\ActiveRecord
         if ($insert)
         {
             $this->con_title =$this->conSc->sc_title ;
-//            $this->con_title = $this->conPc->pc_title;
             $this->con_description = $this->conSc->sc_description;
             $this->con_begin_time = $this->conSc->sc_begin_time;
             $this->con_end_time = $this->conSc->sc_end_time;

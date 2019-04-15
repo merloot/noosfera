@@ -16,11 +16,10 @@ class ConsultationSearch extends Consultation
     public function rules()
     {
         return [
-            [['con_id', 'con_pc_id', 'con_com_id','con_sc_id'], 'integer'],
+            [['con_id', 'con_pc_id', 'con_com_id','con_sc_id','con_type'], 'integer'],
             [['con_title', 'con_description', 'con_date', 'con_begin_time', 'con_end_time'], 'safe'],
             [['con_price'], 'number'],
-            [['con_like'], 'boolean'],
-        ];
+            ];
     }
 
     /**
@@ -62,6 +61,7 @@ class ConsultationSearch extends Consultation
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'con_type'=>$this->con_type,
             'con_id' => $this->con_id,
             'con_sc_id'=> $this->con_sc_id,
             'con_pc_id' => $this->con_pc_id,
@@ -69,7 +69,6 @@ class ConsultationSearch extends Consultation
             'con_begin_time' => $this->con_begin_time,
             'con_end_time' => $this->con_end_time,
             'con_price' => $this->con_price,
-            'con_like' => $this->con_like,
             'con_com_id' => $this->con_com_id,
         ]);
 
