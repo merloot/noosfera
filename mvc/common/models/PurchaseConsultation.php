@@ -43,8 +43,8 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
             [['pc_com_id'],'required'],
             [['pc_user_id', 'pc_com_id'], 'default', 'value' => null],
             [['pc_user_id', 'pc_com_id'], 'integer'],
-            [['pc_date', 'pc_begin_time', 'pc_end_time'], 'safe'],
-
+            [['pc_date'], 'safe'],
+            [['pc_begin_time','pc_end_time'], 'time','validateDate'],
             [['pc_price'], 'number'],
             [['pc_like'], 'boolean'],
             [['pc_title'],'string','max'=>50],
@@ -72,6 +72,26 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
         ];
     }
 
+    public function validateDate(){
+
+        $currentDate = Yii::$app->getFormatter()->asTime(time());
+
+        if ($this->pc_begin_time > $this->pc_end_time){
+            $this->addError('pc_begin_time', '"Проверьте дату окончания"');
+            $this->addError('sc_end_time', '"Дата окончания", не может быть раньше "даты начала');
+        }
+
+        if ($this->isNewRecord){
+            if ($currentDate > $this->pc_begin_time) {
+                $this->addError('pc_begin_time', '"Дата начала", не может быть раньше текущей даты');
+            }
+
+            if ($currentDate > $this->pc_end_time){
+                $this->addError('pc_end_time', '"Дата окончания", не может быть раньше текущей даты');
+            }
+        }
+
+    }
 
     public function getTagCon()
     {

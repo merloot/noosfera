@@ -34,12 +34,15 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['p_name'], 'required'],
+            [['p_name','p_date','p_description'], 'required'],
             [['p_user_id'], 'default', 'value' => null],
             [['p_user_id'], 'integer'],
             [['p_gender'], 'boolean'],
-            [['p_date','p_image'], 'safe'],
-            [['p_name'], 'string', 'max' => 100],
+            ['p_date','date','format'=>'php:Y-m-d','validateDate'],
+            [['p_image'], 'safe'],
+            [['p_name'], 'string', 'length' => [2,80]],
+//            [['p_name'], 'string', 'min' => 5],
+            ['p_name','match','pattern'=>'/^[A-zА-я\s]+$/u'],
             [['p_description', 'p_image'], 'string', 'max' => 1000],
             [['p_image'],'file','extensions' => 'png, jpg'],
             [['p_user_id'], 'unique'],
@@ -66,6 +69,20 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
+    public function validateDate($attribute, $params)
+    {
+        $format = 'php:Y-m-d';
+        if (!$this->hasErrors()) {
+            //$attribute содержит название артрибута, а не значение
+            $date = \DateTime::createFromFormat($format, $this->$attribute);
+
+            if ($date > (new \DateTime()) ) {
+                $this->addError($attribute, 'Такой день еще не наступил!');
+            }
+        }
+    }
+
 
     public function getCompetenceProfile()
     {

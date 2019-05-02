@@ -45,7 +45,8 @@ class SellingConsultation extends \yii\db\ActiveRecord
             [['sc_type'], 'default', 'value' => 1],
             [['sc_user_id', 'sc_com_id'], 'default', 'value' => null],
             [['sc_user_id', 'sc_com_id','sc_type'], 'integer'],
-            [['sc_date', 'sc_begin_time', 'sc_end_time'], 'safe'],
+            [['sc_date',], 'safe'],
+            [['sc_begin_time','sc_end_time'],'time','validateDate'],
             [['sc_price'], 'number'],
             [['sc_like'], 'boolean'],
             [['sc_title'],'string','max'=>50],
@@ -127,6 +128,27 @@ class SellingConsultation extends \yii\db\ActiveRecord
             ->viaTable('TagsConsultation', [
                 'tc_con_id' => 'sc_id'
             ]);
+
+    }
+
+    public function validateDate(){
+
+        $currentDate = Yii::$app->getFormatter()->asTime(time());
+
+        if ($this->sc_begin_time > $this->sc_end_time){
+            $this->addError('sc_begin_time', '"Проверьте дату окончания"');
+            $this->addError('sc_end_time', '"Дата окончания", не может быть раньше "даты начала');
+        }
+
+        if ($this->isNewRecord){
+            if ($currentDate > $this->sc_begin_time) {
+                $this->addError('sc_begin_time', '"Дата начала", не может быть раньше текущей даты');
+            }
+
+            if ($currentDate > $this->sc_end_time){
+                $this->addError('sc_end_time', '"Дата окончания", не может быть раньше текущей даты');
+            }
+        }
 
     }
 

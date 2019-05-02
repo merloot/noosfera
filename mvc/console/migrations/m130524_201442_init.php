@@ -24,15 +24,17 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->createTable('{{%ConsultationController}}', [
+        $this->createTable('{{%Consultation}}', [
             'con_id' => $this->primaryKey(),
-            'con_pc_user_id'=>$this->bigInteger(),
-            'con_sc_user_id' => $this->bigInteger(),
-            'con_like'=>$this->boolean(),
-            'con_date'=>$this->date(),
+            'con_date'=> $this->date(),
             'con_begin_time'=>$this->time(),
             'con_end_time'=>$this->time(),
             'con_price'=>$this->money(),
+            'con_title'=>$this->string(),
+            'con_description'=>$this->string(),
+            'con_sc_id'=>$this->integer(),
+            'con_pc_id'=>$this->integer(),
+            'con_type'=>$this->smallInteger(),
         ], $tableOptions);
 
         $this->createTable('{{%PurchaseConsultation}}',[
@@ -46,12 +48,13 @@ class m130524_201442_init extends Migration
             'pc_end_time'=>$this->time(),
             'pc_price'=>$this->money(),
             'pc_like'=>$this->boolean(),
+            'pc_com_id'=>$this->integer(),
+            'pc_type'=>$this->smallInteger(),
         ],$tableOptions);
 
         $this->createTable('{{%SellingConsultation}}',[
             'sc_id'=>$this->primaryKey(),
             'sc_user_id'=>$this->bigInteger()->notNull(),
-            'sc_con_id'=>$this->bigInteger()->notNull(),
             'sc_title'=>$this->string()->notNull(),
             'sc_description'=>$this->string(),
             'sc_date'=>$this->date(),
@@ -59,24 +62,47 @@ class m130524_201442_init extends Migration
             'sc_end_time'=>$this->time(),
             'sc_price'=>$this->money(),
             'sc_like'=>$this->boolean(),
-
-
+            'sc_com_id'=>$this->integer()->notNull(),
+            'sc_type'=>$this->smallInteger(),
         ],$tableOptions);
 
+        $this->createTable('{{%Profile}}', [
+            'p_id' => $this->primaryKey(),
+            'p_user_id'=>$this->bigInteger()->unique()->notNull(),
+            'p_name' => $this->string(100)->notNull(),
+            'p_description'=>$this->string(255),
+            'p_image'=>$this->string(),
+            'p_gender'=>$this->boolean(),
+            'p_date'=>$this->date(),
+        ], $tableOptions);
+
+        $this->createTable('{{%CompetencePController}}', [
+            'com_id' => $this->primaryKey(),
+            'competence' => $this->string(100)->notNull(),
+        ], $tableOptions);
+
+        $this->createTable('{{%CompetenceProfile}}',[
+            'cp_id'=>$this->primaryKey(),
+            'cp_com_id'=>$this->bigInteger()->notNull(),
+            'cp_p_id'=>$this->bigInteger()->notNull(),
+        ],$tableOptions);
+
+
+        $this->addForeignKey("competence_profile","{{%CompetenceProfile}}",'cp_com_id',"{{%CompetencePController}}","com_id",'CASCADE');
+        $this->addForeignKey("competence_profile_user","{{%CompetenceProfile}}","cp_p_id","{{%Profile}}","p_user_id","CASCADE");
+
+        $this->addForeignKey('p_u_i','{{%Profile}}','p_user_id','{{%user}}','id', 'CASCADE');
         $this->addForeignKey("selling_consultation","{{%SellingConsultation}}","sc_con_id","{{%Consultation}}","con_id","CASCADE");
         $this->addForeignKey("selling_consultation_user","{{%SellingConsultation}}","sc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
         $this->addForeignKey("purchase_consultation","{{%PurchaseConsultation}}","pc_con_id","{{%Consultation}}","con_id","CASCADE");
         $this->addForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}","pc_user_id","{{%Profile}}","p_user_id","CASCADE");
 
-//        $this->addForeignKey("tags_consultation_consultation",'{{%Tags}}',"tc_con_id","{{%Consultation}}","con_id","CASCADE");
-//        $this->addForeignKey("tags_consultation","{{%Tags}}",'tag_id',"{{%TagsConsultation}}","tc_id","CASCADE");
-
-
     }
 
     public function down()
     {
+        $this->dropTable('{{%Profile}}');
         $this->dropTable('{{%user}}');
         $this->dropTable('{{%ConsultationController}}');
         $this->dropTable('{{%SellingConsultation}}');
@@ -85,5 +111,6 @@ class m130524_201442_init extends Migration
         $this->dropForeignKey("purchase_consultation","{{%PurchaseConsultation}}");
         $this->dropForeignKey("selling_consultation_user","{{%SellingConsultation}}");
         $this->dropForeignKey("purchase_consultation_user","{{%PurchaseConsultation}}");
+        $this->dropForeignKey('p_u_i','Profile');
     }
 }
