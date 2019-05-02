@@ -58,11 +58,7 @@ return [
                 'v1/user/<action:user|login>'=>'v1/user/<action>',
                 'v1/competence/<action:competence|kill>'=>'v1/competence/<action>',
                 'v1/selling/<action:selling|drop>'=>'v1/selling/<action>',
-
-                //Альтернатива работы авторизации
-//                '<module:v1>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-// Если брать строку с actions не работает вызов  action/login
-
+//                'v1/selling/<action:profile|>'=>'v1/profile/<action>',
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
                 ],
@@ -99,7 +95,12 @@ return [
                 ['class'=> 'yii\rest\UrlRule',
                     'controller'=>'v1/com',
                 ],
-            ],
+                ['class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/notification'],
+
+                ['class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/archive'],
+                ],
         ],
     ],
     'params' => $params,

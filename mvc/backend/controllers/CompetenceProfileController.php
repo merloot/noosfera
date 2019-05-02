@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CompetencePController implements the CRUD actions for CompetenceProfile model.
+ * CompetenceProfileController implements the CRUD actions for CompetenceProfile model.
  */
 class CompetenceProfileController extends Controller
 {
@@ -46,14 +46,15 @@ class CompetenceProfileController extends Controller
 
     /**
      * Displays a single CompetenceProfile model.
-     * @param integer $id
+     * @param integer $cp_com_id
+     * @param integer $cp_p_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($cp_com_id, $cp_p_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($cp_com_id, $cp_p_id),
         ]);
     }
 
@@ -67,7 +68,7 @@ class CompetenceProfileController extends Controller
         $model = new CompetenceProfile();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->cp_id]);
+            return $this->redirect(['view', 'cp_com_id' => $model->cp_com_id, 'cp_p_id' => $model->cp_p_id]);
         }
 
         return $this->render('create', [
@@ -78,16 +79,17 @@ class CompetenceProfileController extends Controller
     /**
      * Updates an existing CompetenceProfile model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param integer $cp_com_id
+     * @param integer $cp_p_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate($cp_com_id, $cp_p_id)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel($cp_com_id, $cp_p_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->cp_id]);
+            return $this->redirect(['view', 'cp_com_id' => $model->cp_com_id, 'cp_p_id' => $model->cp_p_id]);
         }
 
         return $this->render('update', [
@@ -98,13 +100,14 @@ class CompetenceProfileController extends Controller
     /**
      * Deletes an existing CompetenceProfile model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param integer $cp_com_id
+     * @param integer $cp_p_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($cp_com_id, $cp_p_id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($cp_com_id, $cp_p_id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -112,13 +115,14 @@ class CompetenceProfileController extends Controller
     /**
      * Finds the CompetenceProfile model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     * @param integer $cp_com_id
+     * @param integer $cp_p_id
      * @return CompetenceProfile the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($cp_com_id, $cp_p_id)
     {
-        if (($model = CompetenceProfile::findOne($id)) !== null) {
+        if (($model = CompetenceProfile::findOne(['cp_com_id' => $cp_com_id, 'cp_p_id' => $cp_p_id])) !== null) {
             return $model;
         }
 

@@ -75,7 +75,11 @@ class CompetenceProfile extends \yii\db\ActiveRecord
 
     public function extraFields()
     {
-        return ['cpCom','cpP'];
+        return
+        [
+            'cpCom',
+            'cpP'
+        ];
 
     }
 }

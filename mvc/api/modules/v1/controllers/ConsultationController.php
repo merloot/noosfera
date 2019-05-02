@@ -9,11 +9,13 @@
 namespace api\modules\v1\controllers;
 
 
+use common\models\ConsultationSearch;
+use yii\data\Pagination;
 use yii\rest\ActiveController;
 use yii\filters\ContentNegotiator;
 use sizeg\jwt\JwtHttpBearerAuth;
 use yii\web\Response;
-
+use Yii;
 class ConsultationController extends ActiveController
 {
 
@@ -24,7 +26,7 @@ class ConsultationController extends ActiveController
             'class'=> ContentNegotiator::class,
             'formats' =>[
                 'application/json' => Response::FORMAT_JSON,
-                'application/xml' => Response::FORMAT_XML,
+//                'application/xml' => Response::FORMAT_XML,
             ]
         ];
 
@@ -35,12 +37,39 @@ class ConsultationController extends ActiveController
         return $behaviors;
     }
 
-    public $serializer = [
-        'class'=>'yii\rest\Serializer',
-        'collectionEnvelope'=>'items',
-    ];
-
 
     public $modelClass = 'common\models\Consultation';
+
+
+    public function actions() {
+
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+
+        return $actions;
+    }
+
+    public function prepareDataProvider() {
+
+        $searchModel = new ConsultationSearch();
+
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $pages = new Pagination([
+            'totalCount' => $dataProvider
+                ->query
+                ->count(),
+            'pageSize'=>21
+        ]);
+
+
+        return $dataProvider
+            ->query
+            ->offset($pages->offset)
+            ->limit($pages->limit)
+            ->orderBy('con_date')
+            ->all();
+    }
+
 
 }

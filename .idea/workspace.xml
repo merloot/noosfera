@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="247a5908-d0a5-4a3b-bd25-830b2a50352e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/Consultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Consultation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190211_031656_profile.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190211_035034_Competence.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190211_040555_Tags.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190228_080704_drop_user_consultation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190306_034827_add_column_type.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190306_070830_add_colunm_purchase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,80 +108,13 @@
     </PATH>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/Profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2324">
-              <caret line="183" column="5" lean-forward="true" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
-              <folding>
-                <element signature="e#31#39#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="291" column="9" selection-start-line="291" selection-start-column="9" selection-end-line="291" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1049">
-              <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-              <folding>
-                <element signature="e#33#49#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/SellingConsultation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="133" column="1" lean-forward="true" selection-start-line="133" selection-start-column="1" selection-end-line="152" selection-end-column="5" />
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>post</find>
+      <find>auth</find>
+      <find>user</find>
       <find>debug</find>
       <find>deb</find>
       <find>d</find>
@@ -210,9 +142,6 @@
       <find>inval</find>
       <find>authent</find>
       <find>PUT</find>
-      <find>p_name</find>
-      <find>date</find>
-      <find>p_nam</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -241,6 +170,7 @@
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190211_041622_Consultation.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Competence.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190219_052802_Tags_many_many.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/ProfileSearch.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/models/User.php" />
@@ -264,17 +194,16 @@
         <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultationSearch.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/CompetenceController.php" />
         <option value="$PROJECT_DIR$/mvc/api/config/main.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/SellingController.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Consultation.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/Profile.php" />
+        <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Tags.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/User.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" />
-        <option value="$PROJECT_DIR$/mvc/common/models/Profile.php" />
       </list>
     </option>
   </component>
@@ -363,55 +292,109 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
               <item name="console" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="noosfera.v0.3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera.v0.3" type="462c0819:PsiDirectoryNode" />
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="public_html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
+              <item name="public_html" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../board" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -654,13 +637,11 @@
       <workItem from="1551082187780" duration="7494000" />
       <workItem from="1551239776037" duration="40704000" />
       <workItem from="1551412836181" duration="81975000" />
-      <workItem from="1556105352763" duration="2059000" />
-      <workItem from="1556764290651" duration="7649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364421000" />
+    <option name="totallyTimeSpent" value="354713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -673,9 +654,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="29" width="1924" height="1029" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32177162" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21237993" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -690,7 +670,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32924107" />
       <window_info anchor="bottom" id="REST Client" order="10" weight="0.48549107" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32924107" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
@@ -711,10 +691,73 @@
     </option>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mvc/vendor/sizeg/yii2-jwt/JwtHttpBearerAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/filters/auth/AuthMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/filters/auth/CompositeAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/runtime/logs/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2418074">
+          <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190219_052802_Tags_many_many.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_035034_Competence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_031656_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="35" column="88" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_073324_key_consultation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="118" selection-start-line="16" selection-start-column="118" selection-end-line="16" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="71" column="88" selection-start-line="71" selection-start-column="88" selection-end-line="71" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -766,11 +809,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_080704_drop_user_consultation.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_034827_add_column_type.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/api/config/params-local.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/api/config/main-local.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/common/config/main-local.php" />
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_080704_drop_user_consultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_042622_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_034827_add_column_type.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="47" selection-start-line="14" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_070830_add_colunm_purchase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultationSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-41">
@@ -935,6 +1014,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+          <folding>
+            <element signature="e#33#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1339">
+          <caret line="183" column="5" lean-forward="true" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/TagsConsultation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1129">
@@ -952,93 +1051,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_070830_add_colunm_purchase.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_031656_profile.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_035034_Competence.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_040555_Tags.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190219_052802_Tags_many_many.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="14" selection-start-column="6" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="31" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190213_090123_many_many.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="11" selection-start-line="14" selection-start-column="8" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_042622_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="14" selection-start-column="8" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/i18n/Formatter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="663" column="20" selection-start-line="663" selection-start-column="20" selection-end-line="663" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/SellingConsultation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="133" column="1" lean-forward="true" selection-start-line="133" selection-start-column="1" selection-end-line="152" selection-end-column="5" />
+        <state relative-caret-position="499">
+          <caret line="179" column="8" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
           <folding>
             <element signature="e#33#41#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="291" column="9" selection-start-line="291" selection-start-column="9" selection-end-line="291" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2324">
-          <caret line="183" column="5" lean-forward="true" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#39#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1049">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-          <folding>
-            <element signature="e#33#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        <state relative-caret-position="-206">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
           <folding>
             <element signature="e#33#41#0#PHP" expanded="true" />
           </folding>
@@ -1047,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+        <state relative-caret-position="454">
+          <caret line="130" column="12" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="12" />
           <folding>
             <element signature="e#33#41#0#PHP" expanded="true" />
           </folding>

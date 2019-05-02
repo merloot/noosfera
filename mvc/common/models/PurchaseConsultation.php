@@ -99,7 +99,7 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
         return $this->hasMany(Tags::className(),[
             'tag_id'=>'tc_tag_id'])
             ->viaTable('TagsConsultation', [
-                'tc_con_id' => 'pc_id'
+                'tc_pc_id' => 'pc_id'
             ]);
 
     }

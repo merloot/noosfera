@@ -30,10 +30,11 @@ class TagsConsultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tc_tag_id', 'tc_con_id'], 'required'],
-            [['tc_tag_id', 'tc_con_id'], 'default', 'value' => null],
-            [['tc_tag_id', 'tc_con_id'], 'integer'],
-            [['tc_con_id'], 'exist', 'skipOnError' => true, 'targetClass' => Consultation::className(), 'targetAttribute' => ['tc_con_id' => 'con_id']],
+            [['tc_tag_id', ], 'required'],
+            [['tc_tag_id', 'tc_pc_id','tc_sc_id'], 'default', 'value' => null],
+            [['tc_tag_id', 'tc_pc_id','tc_sc_id'], 'integer'],
+            [['tc_pc_id'], 'exist', 'skipOnError' => true, 'targetClass' => PurchaseConsultation::className(), 'targetAttribute' => ['tc_pc_id' => 'pc_id']],
+            [['tc_sc_id'], 'exist', 'skipOnError' => true, 'targetClass' => SellingConsultation::className(), 'targetAttribute' => ['tc_sc_id' => 'sc_id']],
             [['tc_tag_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tags::className(), 'targetAttribute' => ['tc_tag_id' => 'tag_id']],
         ];
     }
@@ -46,7 +47,8 @@ class TagsConsultation extends \yii\db\ActiveRecord
         return [
             'tc_id' => 'Tc ID',
             'tc_tag_id' => 'Tc Tag ID',
-            'tc_con_id' => 'Tc Con ID',
+            'tc_pc_id' => 'Tc Con ID',
+            'tc_sc_id' => 'Tc Con ID',
         ];
     }
 
@@ -56,23 +58,18 @@ class TagsConsultation extends \yii\db\ActiveRecord
     public function getScCon()
     {
         return $this->hasOne(SellingConsultation::className(),[
-            'sc_con_id'=>'tc_con_id'
+            'sc_id'=>'tc_sc_id'
         ]);
     }
 
     public function getPcCon()
     {
         return $this->hasOne(PurchaseConsultation::className(),[
-            'pc_con_id'=>'tc_con_id'
+            'pc_id'=>'tc_pc_id'
         ]);
     }
 
-    public function getTcCon()
-    {
-        return $this->hasOne(Consultation::className(), [
-            'con_id' => 'tc_con_id'
-        ]);
-    }
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -86,7 +83,11 @@ class TagsConsultation extends \yii\db\ActiveRecord
 
     public function extraFields()
     {
-        return [''];
+        return ['
+        pcCon,
+        scCon
+        tcTag
+        '];
     }
 
 

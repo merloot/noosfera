@@ -3,8 +3,10 @@
 namespace common\models;
 
 use Yii;
+use yii\base\ErrorException;
 use yii\helpers\ArrayHelper;
-
+use yii\web\JsonResponseFormatter;
+use yii\web\Response;
 /**
  * This is the model class for table "SellingConsultation".
  *
@@ -40,8 +42,7 @@ class SellingConsultation extends \yii\db\ActiveRecord
     {
         return [
             [['sc_title'],'trim'],
-            [['sc_title'], 'required'],
-            [['sc_com_id'],'required'],
+            [['sc_title','sc_com_id'], 'required'],
             [['sc_type'], 'default', 'value' => 1],
             [['sc_user_id', 'sc_com_id'], 'default', 'value' => null],
             [['sc_user_id', 'sc_com_id','sc_type'], 'integer'],
@@ -120,13 +121,13 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     }
 
-    public function getTagCon()
+    public function getTagConsultation()
     {
 
         return $this->hasMany(Tags::className(),[
             'tag_id'=>'tc_tag_id'])
             ->viaTable('TagsConsultation', [
-                'tc_con_id' => 'sc_id'
+                'tc_sc_id' => 'sc_id'
             ]);
 
     }
@@ -183,13 +184,14 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     }
 
+
     public function fields()
     {
 
         return ArrayHelper::merge(parent::fields(),[
             'scCom',
             'scUser',
-            'tagCon',
+            'tagConsultation',
             'countSc'
         ]);
     }
@@ -209,7 +211,7 @@ class SellingConsultation extends \yii\db\ActiveRecord
         return [
             'scUser',
             'scCom',
-            'tagCon',
+            'tagConsultation',
             'countSc'
         ];
 

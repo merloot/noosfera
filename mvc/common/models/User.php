@@ -22,8 +22,11 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
+    public $password;
+
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+    const STATUS_ARBITER = 20;
     /**
      * {@inheritdoc}
      */
@@ -52,7 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['email'],'email'],
             [['email','password'],'trim'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED,self::STATUS_ARBITER]],
         ];
     }
     /**
@@ -95,7 +98,7 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByEmail($email)
     {
         return static::findOne([
-            'email' => $email, 'status' => self::STATUS_ACTIVE
+            'email' => $email, 'status' =>  self::STATUS_ACTIVE
         ]);
     }
     /**
