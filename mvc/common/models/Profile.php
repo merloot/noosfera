@@ -34,7 +34,7 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-//            [['p_name'], 'required'],
+            [['p_name'], 'required'],
             [['p_user_id'], 'default', 'value' => null],
             [['p_user_id'], 'integer'],
             [['p_gender'], 'boolean'],
@@ -66,6 +66,20 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
+    public function validateDate($attribute, $params)
+    {
+        $format = 'php:Y-m-d';
+        if (!$this->hasErrors()) {
+            //$attribute содержит название артрибута, а не значение
+            $date = \DateTime::createFromFormat($format, $this->$attribute);
+
+            if ($date > (new \DateTime()) ) {
+                $this->addError($attribute, 'Такой день еще не наступил!');
+            }
+        }
+    }
+
 
     public function getCompetenceProfile()
     {
