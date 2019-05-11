@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Competence */
+/* @var $model common\models\Competence */
 
-$this->title = 'Create CompetencePController';
+$this->title = 'Create Competence';
 $this->params['breadcrumbs'][] = ['label' => 'Competences', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

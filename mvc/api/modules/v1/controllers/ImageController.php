@@ -1,53 +1,47 @@
 <?php
 
+
 namespace api\modules\v1\controllers;
 
-use common\models\Profile;
-use yii\data\Pagination;
-use common\models\ProfileSearch;
-use yii;
-use yii\web\Response;
-use yii\rest\ActiveController;
-use sizeg\jwt\JwtHttpBearerAuth;
+use common\models\Image;
 use yii\filters\ContentNegotiator;
+use yii\rest\ActiveController;
+use yii\web\Response;
 use yii\web\UploadedFile;
 
-class ProfileController extends ActiveController
+class ImageController extends ActiveController
 {
-    public $p_image;
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-        $behaviors['ContentNegotiator'] = [
-            'class' => ContentNegotiator::class,
-            'formats' => [
+        $behaviors['ContentNegotiator']=[
+            'class'=> ContentNegotiator::class,
+            'formats' =>[
                 'application/json' => Response::FORMAT_JSON,
-            ],
-            ];
+            ]
+        ];
 //        $behaviors['authenticator'] = [
 //            'class' => JwtHttpBearerAuth::class,
-//        ];
+//            ];
+
         return $behaviors;
     }
 
-    public $serializer = [
-        'class'=>'yii\rest\Serializer',
-        'collectionEnvelope'=>'items',
-    ];
+    public $modelClass = 'common\models\Image';
 
-    public $modelClass = 'common\models\Profile';
 
     public function actionUpload()
     {
-        $model = new Profile();
+        $model = new Image();
         $model->load ( \Yii::$app->getRequest ()->getBodyParams (), '' );
-        $image =UploadedFile::getInstanceByName ( 'p_image' );
+        $image =UploadedFile::getInstanceByName ( 'i_image' );
         if (is_object ( $image )) {
-            $name =$model->p_image = time () . "_" . uniqid () . '.' . $image->extension;
+            $name =$model->i_image = time () . "_" . uniqid () . '.' . $image->extension;
             $imageDir = \Yii::getAlias ( '@avatar' );
-            $image->saveAs ( $imageDir . '/' . $model->p_image );
-            $model->p_image = $name;
-            \Yii::info ( 'New image saved,: ' . $model->p_user_id, __METHOD__ );
+            $image->saveAs ( $imageDir . '/' . $model->i_image );
+            $model->i_user_id = \Yii::$app->request->getBodyParam('i_user_id');
+            $model->i_image = $name;
+            \Yii::info ( 'New image saved,: ' . $model->i_user_id, __METHOD__ );
         } else {
             \Yii::info ( 'This is not image object!!', __METHOD__ );
         }
@@ -61,4 +55,5 @@ class ProfileController extends ActiveController
         }
         return $model;
     }
+
 }

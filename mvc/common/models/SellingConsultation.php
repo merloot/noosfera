@@ -120,6 +120,12 @@ class SellingConsultation extends \yii\db\ActiveRecord
 
     }
 
+    public function getImage()
+    {
+        return $this->hasMany(Image::className(),[
+            'i_user_id'=>'sc_user_id'
+        ]);
+    }
     public function getTagConsultation()
     {
 
@@ -159,7 +165,8 @@ class SellingConsultation extends \yii\db\ActiveRecord
             'scCom',
             'scUser',
             'tagConsultation',
-            'countSc'
+            'countSc',
+            'image'
         ]);
     }
 
@@ -179,7 +186,8 @@ class SellingConsultation extends \yii\db\ActiveRecord
             'scUser',
             'scCom',
             'tagConsultation',
-            'countSc'
+            'countSc',
+            'image'
         ];
 
     }

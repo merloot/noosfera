@@ -59,8 +59,16 @@ return [
                 'v1/competence/<action:competence|kill>'=>'v1/competence/<action>',
                 'v1/selling/<action:selling|drop>'=>'v1/selling/<action>',
 //                'v1/selling/<action:profile|>'=>'v1/profile/<action>',
+                'v1/profile/<action:profile|upload>'=>'v1/profile/<action>',
+                'v1/image/<action:image|upload>'=>'v1/image/<action>',
+
+
                 ['class'=>'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
+                ],
+
+                ['class'=>'yii\rest\UrlRule',
+                    'controller'=> 'v1/image',
                 ],
 
                 ['class'=>'yii\rest\UrlRule',

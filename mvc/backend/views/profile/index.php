@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'p_id',
             'p_user_id',
             'p_name',
-            'p_description',
+//            'p_description',
             'p_image',
             //'p_gender:boolean',
             //'p_date',

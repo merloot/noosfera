@@ -84,6 +84,13 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
 
     }
 
+    public function getImage()
+    {
+        return $this->hasMany(Image::className(),[
+            'i_user_id'=>'pc_user_id'
+        ]);
+    }
+
     public function getConsultations()
     {
 
@@ -139,7 +146,8 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
             'pcCom',
             'pcUser',
             'tagCon',
-            'countPc'
+            'countPc',
+            'image'
         ]);
     }
 
@@ -149,7 +157,8 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
             'pcCom',
             'pcUser',
             'tagCon',
-            'countPc'
+            'countPc',
+            'image'
         ];
     }
 

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\CompetenceSearch */
+/* @var $searchModel common\models\CompetenceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Competences';
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create CompetencePController', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Competence', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
