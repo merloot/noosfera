@@ -3,33 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="247a5908-d0a5-4a3b-bd25-830b2a50352e" name="Default" comment="95%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/api/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/models/UserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/models/UserSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence-profile/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence-profile/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/competence/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/competence/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/profile/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/profile/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/profile/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/profile/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/backend/views/user/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/backend/views/user/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/common/models/CompetenceProfileSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/CompetenceProfileSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/common/models/CompetenceSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/CompetenceSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/common/models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/common/models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/common/models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/api/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/api/.htaccess" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,58 +109,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/config/main-local.php">
+        <entry file="file://$PROJECT_DIR$/public_html/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-end-line="21" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/api/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public_html/admin/index.php">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="375">
+              <caret line="25" column="95" selection-start-line="25" selection-start-column="95" selection-end-line="25" selection-end-column="95" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-              <folding>
-                <element signature="e#46#77#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1380">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/common/models/Profile.php">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190213_090123_many_many.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-753">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="105">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190520_044316_Add_Profile_Balance.php">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+            <state relative-caret-position="-120">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/api/config/main.php">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_073324_key_consultation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+            <state relative-caret-position="105">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="29" column="105" selection-start-line="29" selection-start-column="105" selection-end-line="29" selection-end-column="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="121" selection-start-line="29" selection-start-column="121" selection-end-line="29" selection-end-column="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="114" selection-start-line="15" selection-start-column="114" selection-end-line="15" selection-end-column="114" />
             </state>
           </provider>
         </entry>
@@ -191,7 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>descri</find>
       <find>CompetencePC</find>
       <find>CompetenceP</find>
       <find>sear</find>
@@ -221,6 +231,7 @@
       <find>Competence</find>
       <find>pdo</find>
       <find>update</find>
+      <find>Image</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -232,21 +243,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mvc/common/models/ArchiveSearch.php" />
-        <option value="$PROJECT_DIR$/mvc/backend/models/Competence.php" />
-        <option value="$PROJECT_DIR$/mvc/backend/views/competence_profile/view.php" />
-        <option value="$PROJECT_DIR$/mvc/backend/views/competence_profile/index.php" />
         <option value="$PROJECT_DIR$/mvc/backend/views/competence_profile/create.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/CompetenceProfile.php" />
         <option value="$PROJECT_DIR$/mvc/backend/views/competence/index.php" />
         <option value="$PROJECT_DIR$/mvc/backend/views/competence/_search.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/NotificationSearch.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/NotificationController.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Notifications.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Tags.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/TagsConsultation.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/User.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/TagconSearch.php" />
@@ -267,22 +272,28 @@
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190228_072455_update.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/UploadController.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/UploadController.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ImageController.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/SellingConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Image.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/PurchaseConsultation.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190211_031656_profile.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" />
         <option value="$PROJECT_DIR$/mvc/console/migrations/m190211_040555_Tags.php" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/public_html/api/.htaccess" />
         <option value="$PROJECT_DIR$/public_html/api/index.php" />
         <option value="$PROJECT_DIR$/mvc/common/config/main-local.php" />
         <option value="$PROJECT_DIR$/mvc/api/config/main.php" />
-        <option value="$PROJECT_DIR$/mvc/console/migrations/m190520_044316_Add_Profile_Balance.php" />
         <option value="$PROJECT_DIR$/mvc/common/models/Profile.php" />
         <option value="$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/public_html/api/.gitignore" />
+        <option value="$PROJECT_DIR$/public_html/.gitignore" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190520_093551_Image.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190520_044316_Add_Profile_Balance.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php" />
+        <option value="$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php" />
       </list>
     </option>
   </component>
@@ -400,43 +411,6 @@
               <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
               <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
               <item name="console" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -455,26 +429,7 @@
               <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
               <item name="noosfera" type="462c0819:PsiDirectoryNode" />
               <item name="public_html" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="public_html" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="public_html" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="noosfera" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noosfera" type="462c0819:PsiDirectoryNode" />
-              <item name="public_html" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="avatar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -743,7 +698,7 @@
       <workItem from="1555126772727" duration="34381000" />
       <workItem from="1557557115224" duration="26566000" />
       <workItem from="1558065476509" duration="1994000" />
-      <workItem from="1558320367809" duration="8537000" />
+      <workItem from="1558320367809" duration="13873000" />
     </task>
     <task id="LOCAL-00001" summary="v132">
       <created>1553250792256</created>
@@ -773,11 +728,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557580530062</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="95%">
+      <created>1558334384511</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558334384511</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="519225000" />
+    <option name="totallyTimeSpent" value="524561000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -908,41 +870,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/ProfileSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/backend/controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/Tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="89" column="39" lean-forward="true" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/backend/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/UploadController.php" />
     <entry file="file://$PROJECT_DIR$/mvc/api/config/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1001,9 +928,6 @@
     <entry file="file://$PROJECT_DIR$/mvc/api/config/params.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/config/params-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_031656_profile.php" />
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_035034_Competence.php" />
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190219_052802_Tags_many_many.php" />
@@ -1013,62 +937,6 @@
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_034827_add_column_type.php" />
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190306_070830_add_colunm_purchase.php" />
     <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190211_040555_Tags.php" />
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190213_090123_many_many.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_073324_key_consultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="131" column="53" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/common/models/Consultation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -1115,13 +983,6 @@
     <entry file="file://$PROJECT_DIR$/public_html/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/api/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/vendor/yiisoft/yii2/db/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1129,20 +990,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/api/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190520_044316_Add_Profile_Balance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1152,6 +1003,16 @@
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mvc/api/modules/v1/controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1163,17 +1024,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/common/config/main-local.php">
+    <entry file="file://$PROJECT_DIR$/public_html/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-end-line="21" />
-        </state>
+        <state relative-caret-position="-39" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/api/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="true" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/api/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" lean-forward="true" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190520_093551_Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190520_044316_Add_Profile_Balance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/api/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m130524_201442_init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1380">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190213_090123_many_many.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190218_075318_add_column.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190228_073324_key_consultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190402_025559_archive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="105" selection-start-line="29" selection-start-column="105" selection-end-line="29" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190405_033428_notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="121" selection-start-line="29" selection-start-column="121" selection-end-line="29" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190413_052752_tags_key.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="114" selection-start-line="15" selection-start-column="114" selection-end-line="15" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/console/migrations/m190511_100610_Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="95" selection-start-line="25" selection-start-column="95" selection-end-line="25" selection-end-column="95" />
         </state>
       </provider>
     </entry>

@@ -25,9 +25,9 @@ class m190405_033428_notification extends Migration
             'n_con_id'=> $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->addForeignKey('NotificationsConsultations','Notifications','n_con_id','Consultation','con_id');
-        $this->addForeignKey('NotificationsSelling','Notifications','n_selling_user_id','Profile','p_user_id');
-        $this->addForeignKey('NotificationsPurchase','Notifications','n_purchase_user_id','Profile','p_user_id');
+        $this->addForeignKey('NotificationsConsultations','Notifications','n_con_id','Consultation','con_id','CASCADE');
+        $this->addForeignKey('NotificationsSelling','Notifications','n_selling_user_id','Profile','p_user_id','CASCADE');
+        $this->addForeignKey('NotificationsPurchase','Notifications','n_purchase_user_id','Profile','p_user_id','CASCADE');
     }
 
     /**

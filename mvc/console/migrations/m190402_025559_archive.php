@@ -27,7 +27,7 @@ class m190402_025559_archive extends Migration
 
         ], $tableOptions);
 
-        $this->addForeignKey('Archive_Consultation','Archive','a_con_id','Consultation','con_id');
+        $this->addForeignKey('Archive_Consultation','Archive','a_con_id','Consultation','con_id','CASCADE');
     }
 
     /**

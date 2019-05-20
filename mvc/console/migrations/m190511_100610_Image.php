@@ -17,13 +17,13 @@ class m190511_100610_Image extends Migration
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-        $this->createTable('{{%Image}}', [
+        $this->createTable('Image', [
             'i_id' => $this->primaryKey(),
             'i_user_id'=>$this->integer()->notNull(),
             'i_image'=>$this->string(),
         ], $tableOptions);
 
-        $this->addForeignKey('Image_Profile','Image','i_user_id','Profile','p_user_id');
+        $this->addForeignKey('Image_Profile','Image','i_user_id','Profile','p_user_id','CASCADE');
 
 
     }
@@ -34,7 +34,7 @@ class m190511_100610_Image extends Migration
     public function safeDown()
     {
      $this->dropTable('Image');
-     $this->dropForeignKey('','');
+     $this->dropForeignKey('Image_Profile','Image');
     }
 
     /*

@@ -12,8 +12,8 @@ class m190413_052752_tags_key extends Migration
      */
     public function safeUp()
     {
-        $this->addForeignKey('TagsSelling','TagsConsultation','tc_sc_id','SellingConsultation','sc_id');
-        $this->addForeignKey('TagsPurchase','TagsConsultation','tc_pc_id','PurchaseConsultation','pc_id');
+        $this->addForeignKey('TagsSelling','TagsConsultation','tc_sc_id','SellingConsultation','sc_id','CASCADE');
+        $this->addForeignKey('TagsPurchase','TagsConsultation','tc_pc_id','PurchaseConsultation','pc_id','CASCADE');
 
     }
 
