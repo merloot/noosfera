@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
  * @property string $p_image
  * @property bool $p_gender
  * @property string $p_date
+ * @property string $p_balance
  *
  * @property User $pUser
  */
@@ -43,6 +44,7 @@ class Profile extends \yii\db\ActiveRecord
             [['p_description', 'p_image'], 'string', 'max' => 1000],
             [['p_image'],'file','extensions' => 'png, jpg'],
             [['p_user_id'], 'unique'],
+            [['p_balance'],'numeric'],
             [['p_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['p_user_id' => 'id']],
         ];
     }

@@ -60,6 +60,7 @@ return [
                 'v1/selling/<action:selling|drop>'=>'v1/selling/<action>',
 //                'v1/selling/<action:profile|>'=>'v1/profile/<action>',
                 'v1/profile/<action:profile|upload>'=>'v1/profile/<action>',
+                'v1/profile/<action:profile|buy>'=>'v1/profile/<action>',
                 'v1/image/<action:image|upload>'=>'v1/image/<action>',
 
 

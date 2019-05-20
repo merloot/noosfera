@@ -2,6 +2,7 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\Consultation;
 use common\models\Profile;
 use yii\data\Pagination;
 use common\models\ProfileSearch;
@@ -60,5 +61,28 @@ class ProfileController extends ActiveController
 
         }
         return $model;
+    }
+
+    public function actionBuy($sender_id, $recipient_id,$con_id)
+    {
+        $model = new Profile();
+        $sender = $model->find()->where(['p_user_id'=>$sender_id])->asArray()->one();
+        $recipient = $model->find()->where(['p_user_id'=>$recipient_id])->asArray()->one();
+        $consultation = Consultation::find()->where(['con_id'=>$con_id])->asArray()->one();
+
+        $buy = $sender['p_balance']-$consultation['con_price'];
+        $sell = $recipient['p_balance']+$consultation['con_price'];
+        var_dump($sender->update('',''));
+        die();
+        $model->save();
+
+//        Yii::$app->db->createCommand()->update('Profile',['p_balance'],['p_user_id'=>$sender_id],$buy)->execute();
+//        Yii::$app->db->createCommand()->update('Profile',['p_balance'],['p_user_id'=>$recipient_id],$sell)->execute();
+
+
+         return[
+             $sell, $buy
+//
+    ];
     }
 }
