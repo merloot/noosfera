@@ -33,8 +33,8 @@ class m190511_100610_Image extends Migration
      */
     public function safeDown()
     {
-     $this->dropTable('Image');
-     $this->dropForeignKey('Image_Profile','Image');
+        $this->dropForeignKey('Image_Profile','Image');
+        $this->dropTable('Image');
     }
 
     /*
