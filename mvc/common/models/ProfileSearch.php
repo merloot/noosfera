@@ -18,7 +18,7 @@ class ProfileSearch extends Profile
     {
         return [
             [['p_id', 'p_user_id'], 'integer'],
-            [['p_name', 'p_description', 'p_image', 'p_date'], 'safe'],
+            [['p_name', 'p_description','p_date'], 'safe'],
             [['p_gender'], 'boolean'],
         ];
     }
@@ -66,9 +66,7 @@ class ProfileSearch extends Profile
         ]);
 
         $query->andFilterWhere(['like', 'p_name', $this->p_name])
-            ->andFilterWhere(['like', 'p_description', $this->p_description])
-            ->andFilterWhere(['like', 'p_image', $this->p_image]);
-
+            ->andFilterWhere(['like', 'p_description', $this->p_description]);
         return $dataProvider;
     }
 }

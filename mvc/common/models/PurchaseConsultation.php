@@ -44,11 +44,12 @@ class PurchaseConsultation extends \yii\db\ActiveRecord
             [['pc_user_id', 'pc_com_id'], 'default', 'value' => null],
             [['pc_user_id', 'pc_com_id'], 'integer'],
             [['pc_date'], 'safe'],
-            [['pc_begin_time','pc_end_time'], 'time','validateDate'],
+            [['pc_begin_time','pc_end_time'], 'time'],
             [['pc_price'], 'number'],
             [['pc_like'], 'boolean'],
             [['pc_title'],'string','max'=>50],
             [['pc_description'], 'string', 'max' => 250],
+            [['pc_com_id'],'exist','skipOnError'=>true,'targetClass'=>Competence::className(),'targetAttribute'=>['pc_com_id'=>'com_id']],
             [['pc_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['pc_user_id' => 'p_user_id']],
         ];
     }

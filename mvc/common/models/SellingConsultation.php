@@ -42,16 +42,17 @@ class SellingConsultation extends \yii\db\ActiveRecord
     {
         return [
             [['sc_title'],'trim'],
-            [['sc_title','sc_com_id'], 'required'],
+            [['sc_title'], 'required'],
             [['sc_type'], 'default', 'value' => 1],
             [['sc_user_id', 'sc_com_id'], 'default', 'value' => null],
             [['sc_user_id', 'sc_com_id','sc_type'], 'integer'],
             [['sc_date',], 'safe'],
-            [['sc_begin_time','sc_end_time'],'time','validateDate'],
+            [['sc_begin_time','sc_end_time'],'time'],
             [['sc_price'], 'number'],
             [['sc_like'], 'boolean'],
             [['sc_title'],'string','max'=>50],
             [['sc_description'], 'string', 'max' => 250],
+            [['sc_com_id'],'exist','skipOnError'=>true,'targetClass'=>Competence::className(),'targetAttribute'=>['sc_com_id'=>'com_id']],
             [['sc_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['sc_user_id' => 'p_user_id']],
         ];
     }

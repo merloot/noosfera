@@ -15,7 +15,6 @@ use yii\helpers\ArrayHelper;
  * @property string $con_begin_time
  * @property string $con_end_time
  * @property string $con_price
- * @property string $con_com_id
  * @property string $con_title
  * @property string $con_description
  *
@@ -40,8 +39,8 @@ class Consultation extends \yii\db\ActiveRecord
     return [
         [['con_date', 'con_begin_time', 'con_end_time'], 'safe'],
         [['con_price'], 'number'],
-        [['con_com_id', 'con_sc_id', 'con_pc_id','con_type'], 'default', 'value' => null],
-        [['con_com_id', 'con_sc_id', 'con_pc_id','con_type'], 'integer'],
+        [['con_sc_id', 'con_pc_id','con_type'], 'default', 'value' => null],
+        [['con_sc_id', 'con_pc_id','con_type'], 'integer'],
         [['con_title'], 'string', 'max' => 50],
         [['con_description'], 'string', 'max' => 250],
         [['con_pc_id'], 'exist', 'skipOnError' => true, 'targetClass' => PurchaseConsultation::className(), 'targetAttribute' => ['con_pc_id' => 'pc_id']],

@@ -64,6 +64,7 @@ class PurchaseConsultationSearch extends PurchaseConsultation
         // grid filtering conditions
         $query->andFilterWhere([
             'pc_id' => $this->pc_id,
+            'pc_title' => $this->pc_title,
             'pc_user_id' => $this->pc_user_id,
             'pc_date' => $this->pc_date,
             'pc_begin_time' => $this->pc_begin_time,

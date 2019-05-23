@@ -24,6 +24,7 @@ class m190402_025559_archive extends Migration
             'a_con_id'=> $this->integer()->notNull(),
             'a_date'=> $this->timestamp(),
             'a_hash_video'=> $this->string(),
+            'a_reason'=>$this->string(),
 
         ], $tableOptions);
 

@@ -44,7 +44,7 @@ class Profile extends \yii\db\ActiveRecord
             [['p_description', 'p_image'], 'string', 'max' => 1000],
             [['p_image'],'file','extensions' => 'png, jpg'],
             [['p_user_id'], 'unique'],
-            [['p_balance'],'numeric'],
+//            [['p_balance'],'numeric'],
             [['p_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['p_user_id' => 'id']],
         ];
     }
@@ -128,11 +128,11 @@ class Profile extends \yii\db\ActiveRecord
     }
 
 
-    public function afterDelete()
-    {
-        @unlink(Yii::getAlias('@avatar') . '/uploads/avatar' . $this->p_image);
-        parent::afterDelete();
-    }
+//    public function afterDelete()
+//    {
+//        @unlink(Yii::getAlias('@avatar') . '/uploads/avatar' . $this->p_image);
+//        parent::afterDelete();
+//    }
 
 //    public function beforeSave($insert)
 //    {
@@ -167,7 +167,14 @@ class Profile extends \yii\db\ActiveRecord
 
     public function extraFields()
     {
-        return ['competenceProfile','cpCom','pUser','conPUser','conSUser','image'];
+        return [
+            'competenceProfile',
+            'cpCom',
+            'pUser',
+            'conPUser',
+            'conSUser',
+            'image'
+        ];
     }
 
 //    public function beforeValidate()
